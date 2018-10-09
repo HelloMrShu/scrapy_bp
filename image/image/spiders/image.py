@@ -4,8 +4,7 @@ from image.items import ImageItem
 from scrapy.http import Request
 import sys
 import datetime
-from image.emailSender import emailSender  # 导入发信模块
- 
+from image.emailSender import emailSender  # 导入发信模块ssss
 
 class ImageSpider(scrapy.Spider):
     name = 'image'
@@ -16,7 +15,7 @@ class ImageSpider(scrapy.Spider):
     
     def parse(self, response):
     	emailSenderClient = emailSender()
-    	emailSenderClient.sendEmail(['986934994@qq.com'], 'crawl begin') #发送邮件
+    	#emailSenderClient.sendEmail(['986934994@qq.com'], 'crawl begin') #发送邮件
 
     	item = ImageItem()
     	item['title'] = ''
@@ -40,7 +39,8 @@ class ImageSpider(scrapy.Spider):
     	nextPageSelector = response.xpath('//div[@id="middleContainer"]/ul[@class="comicNav"]')
     	urlStr = nextPageSelector.xpath('li/a/@href').extract()[3]
     	urlArr = urlStr.split('/')
-    	print(urlArr)
+    	#print(response.request.headers['User-Agent'])
+
     	if len(urlArr) >= 2:
     		nextPageUrl = self.base + str(urlArr[1]) + '/'
-    		#yield Request(nextPageUrl, callback=self.parse, dont_filter = True)
+    		yield Request(nextPageUrl, callback=self.parse, dont_filter = True)
