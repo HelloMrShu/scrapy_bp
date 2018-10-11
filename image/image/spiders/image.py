@@ -39,7 +39,6 @@ class ImageSpider(scrapy.Spider):
     	nextPageSelector = response.xpath('//div[@id="middleContainer"]/ul[@class="comicNav"]')
     	urlStr = nextPageSelector.xpath('li/a/@href').extract()[3]
     	urlArr = urlStr.split('/')
-    	#print(response.request.headers['User-Agent'])
 
     	if len(urlArr) >= 2:
     		nextPageUrl = self.base + str(urlArr[1]) + '/'
