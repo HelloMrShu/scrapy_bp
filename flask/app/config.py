@@ -34,27 +34,7 @@ class Config:
         pass
 
 
-# 开发环境配置
-class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/scrapy'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost:3306/scrapy?charset=utf8'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
-
-# 测试环境配置
-class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/scrapy'
-
-
-# 生产环境
-class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/scrapy'
-
-
-
-# 生成一个字典，用来根据字符串找到对应的配置类。
-config = {
-    'development': DevelopmentConfig,
-    'testing': TestConfig,
-    'production': ProductionConfig,
-    'default': DevelopmentConfig
-}
 
