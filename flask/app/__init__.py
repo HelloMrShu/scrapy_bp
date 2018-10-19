@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from .main import main as main_blueprint
 from flask_sqlalchemy import SQLAlchemy
 from app.config import Config
-
+from app.models import db
 
 bootstrap = Bootstrap()
 
