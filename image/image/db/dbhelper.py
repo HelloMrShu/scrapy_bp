@@ -26,10 +26,11 @@ class DBHelper():
             cursor = self.cursor
             sql = "insert into images(title,img_url) values(%s,%s)"
             #调用插入的方法
+            self.db.ping(reconnect=True)
             cursor.execute(sql, (
                 item["title"], item['url']
                 )
-            )
+            )            
             self.db.commit()
 
         except Exception as e:

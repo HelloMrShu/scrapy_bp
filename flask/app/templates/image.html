@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}flask iamge{% endblock %}
+{% block content %}
+	<table>
+		<tr>
+		    <th>ID</th>
+		    <th>标题</th>
+		    <th>图片路径</th>
+		 </tr>
+		{% for image in images %}
+
+	        <tr>
+	        	<td>{{ image.id}}</td>
+	            <td>{{ image.title}}</td>
+	            <td><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
+	        </tr>
+	     {% endfor %}
+ 	</table>
+
+{% endblock %}
