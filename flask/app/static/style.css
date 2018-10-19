@@ -1,0 +1,11 @@
+#nav{
+	height: 100px;
+	witdh:auto;
+}
+#footer{
+	margin-top: 100px;
+}
+
+td {
+	border: 1px solid gray;
+}

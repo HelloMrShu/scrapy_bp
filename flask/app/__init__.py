@@ -9,12 +9,12 @@ bootstrap = Bootstrap()
 
 def create_app(config_name):
     app = Flask(__name__)
-    app.config.from_object(Config)
-    app.register_blueprint(main_blueprint)
-    #config[config_name].init_app(app)
-
     bootstrap.init_app(app)
     db = SQLAlchemy(app)
 
-    # 返回app实例对象
+    app.config.from_object(Config)
+    db.init_app(app)
+    app.register_blueprint(main_blueprint)
+
+    #返回app实例对象
     return app

@@ -1,10 +1,8 @@
 from . import main
-#from app.models import Image
- 
-# from flask import render_template,redirect,url_for
- 
+from flask import render_template
+from app.models import Image
+  
 @main.route("/")
 def index():
-	#image_list = Image.query.all()
-	#print(image_list)
-	return "<h3>这是前台页面</h3>"
+	image_list = Image.query.all()
+	return render_template('image.html', images=image_list,msg='123')
