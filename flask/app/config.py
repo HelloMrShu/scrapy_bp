@@ -34,7 +34,7 @@ class Config:
     SQLALCHEMY_COMMIT_TEARDOWN = True
 
     # 额外的初始化操作
-    @staticmethod
+    @staticmethod 
     def init_app(app):
         pass
 
