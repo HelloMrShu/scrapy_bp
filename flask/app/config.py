@@ -24,17 +24,18 @@ class Config:
     MAIL_PORT = 465
     MAIL_USE_TLS = False
 
-
     #文件上传的位置
     MAX_CONTENT_LENGTH = 8 * 1024 * 1024
     UPLOADED_PHOTOS_DEST = os.path.join(BASE_DIR, 'static/uploads')
+
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost:3306/scrapy?charset=utf8'
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SQLALCHEMY_COMMIT_TEARDOWN = True
+
     # 额外的初始化操作
     @staticmethod
     def init_app(app):
         pass
-
-
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost:3306/scrapy?charset=utf8'
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
