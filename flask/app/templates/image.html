@@ -1,20 +1,46 @@
 {% extends "layout.html" %}
 {% block title %}flask iamge{% endblock %}
 {% block content %}
-	<table>
-		<tr>
-		    <th>ID</th>
-		    <th>标题</th>
-		    <th>图片路径</th>
-		 </tr>
-		{% for image in images %}
+	<div id='imagelist'>
+		<table>
+			<tr>
+			    <th>ID</th>
+			    <th>标题</th>
+			    <th>图片路径</th>
+			 </tr>
+			{% for image in images %}
 
-	        <tr>
-	        	<td>{{ image.id}}</td>
-	            <td>{{ image.title}}</td>
-	            <td><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
-	        </tr>
-	     {% endfor %}
- 	</table>
+		        <tr>
+		        	<td>{{ image.id}}</td>
+		            <td>{{ image.title}}</td>
+		            <td><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
+		        </tr>
+		     {% endfor %}
+
+	 	</table>
+ 	</div>
+ 	<div id='paginate'>
+	    <ul>
+	    	<li id = 'pagenext'>
+	    		{% if paginate.page ==1 %}
+	        		<a href='#'>上一页</a>
+	        	{% else %}
+	        		<a href='/list?page={{paginate.pre_num}}'>上一页</a>
+	    		{% endif %}
+	    	</li>
+
+		    {% for i in paginate.iter_pages() %}
+		        <li><a href="/list?page={{ i }}">{{ i }}</a></li>
+		    {% endfor %}
+
+		    <li id = 'pagenext'>
+		    	{% if paginate.page == paginate.pages %}
+	        		<a href='#'>下一页</a>
+	        	{% else %}
+	        		<a href='/list?page={{paginate.next_num}}'>上一页</a>
+	    		{% endif %}
+	    	</li>
+	    </ul>
+ 	</div>
 
 {% endblock %}

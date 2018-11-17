@@ -9,3 +9,46 @@
 td {
 	border: 1px solid gray;
 }
+
+#imagelist{
+	height: 400px;
+}
+
+#paginate{
+	margin-top: 20px;
+}
+
+ul{
+	list-style:none;
+}
+
+ul li{
+	float: left;
+	display: inline-block;
+	margin-left: 5px;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+ul li a{
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+	color:gray;
+}
+
+ul li a:hover{
+	color: gray;
+	border: 1px solid #ca0c16;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+#pagenext{
+	width: 70px;
+}
+
+.currentpage{
+	background: #ca0c16;
+}
