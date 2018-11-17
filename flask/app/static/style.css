@@ -15,7 +15,7 @@ td {
 }
 
 #paginate{
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
 ul{
@@ -50,5 +50,5 @@ ul li a:hover{
 }
 
 .currentpage{
-	background: #ca0c16;
+	background: #eee;
 }

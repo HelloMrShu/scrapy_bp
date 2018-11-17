@@ -30,7 +30,11 @@
 	    	</li>
 
 		    {% for i in paginate.iter_pages() %}
-		        <li><a href="/list?page={{ i }}">{{ i }}</a></li>
+		    	{% if i == paginate.page %}
+		        	<li><a class="currentpage" href="/list?page={{ i }}">{{ i }}</a></li>
+		        {% else %}
+		    		<li><a href="/list?page={{ i }}">{{ i }}</a></li>
+		    	{% endif %}
 		    {% endfor %}
 
 		    <li id = 'pagenext'>
