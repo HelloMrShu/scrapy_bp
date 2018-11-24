@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}flask article create{% endblock %}
+{% block content %}
+	<div class="article-create">
+		<div class="article-hit">创建文章</div>
+		<form action="/article/create" method="post">
+			<div class="form-group">
+			    <label for="title">Title</label>
+			    <input type="text" class="form-control" name="title" placeholder="文章标题">
+			 </div>
+			 <div class="form-group">
+			    <label for="title">Content</label>
+			    <textarea class="form-control" rows="3" name="content" placeholder="文章内容"></textarea>
+			 </div>
+		    <input type="submit" id="submit" value="创建">
+		</form>
+	</div>
+{% endblock %}
