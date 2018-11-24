@@ -11,11 +11,26 @@ td {
 }
 
 #imagelist{
+	width: 700px;
+	margin: auto;
+	_height: 400px;
 	height: 400px;
+}
+.image-list{
+	height: 60px;
+	line-height: 60px;
+	margin: auto;
+	width: 700px;
+	text-align: center;
 }
 
 #paginate{
 	margin-top: 30px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	width: 700px;
 }
 
 ul{
@@ -51,4 +66,46 @@ ul li a:hover{
 
 .currentpage{
 	background: #eee;
+}
+
+.article-create{
+	width: 500px;
+	margin: auto;
+}
+.article-hit{
+	height: 70px;
+	line-height: 70px;
+}
+.article-list{
+	width: 700px;
+	margin: auto;
+	background: #eee;
+	_height: 400px;
+	min-height: 400px;
+}
+.article{
+	margin-left: 20px;
+}
+.article-title{
+	height: 40px;
+	line-height: 40px;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.article-op{
+	height: 40px;
+	line-height: 40px;
+}
+
+.article-op-level {
+	float: left;
+}
+#article-op-btn{
+	text-decoration: none;
+	color: gray;
+}
+.article-content{
+	_height: 400px; 
+	min-height: 400px 
 }

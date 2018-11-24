@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}flask article index{% endblock %}
+{% block content %}
+	<div class="article-hit">
+		<center>文章列表&emsp;<a href="/article/create">去创建</a></center>
+	</div>
+	<div class="article-list">
+		{% for article in articles %}
+	        <div class="article">
+	        	<div class="article-title">
+	        		<i class="fa fa-book"></i>
+	        		{{ article.title}}
+	        	</div>
+	            <div>
+	            	{{ article.content}}
+	            </div>
+	            <div class="article-op">
+	            	<div class="article-op-level">
+	            		<a id ="article-op-btn" href="/article/view?article_id={{article.id}}"><i class="fa fa-eye"></i></a>
+	            	</div>
+	            	<div>
+	            		<form action="/article/edit" method="POST">
+	            			<input type="hidden" name="article_id" value="{{article.id}}" />
+	            			<button id="article-op-btn" type="submit" class="btn btn-link">
+	            				<i class="fa fa-edit"></i>
+	            			</button>
+	            		</form>
+	            	</div>
+	            </div>
+	        </div>
+	     {% endfor %}
+	</div>
+	<div id='paginate'>
+		    <ul>
+		    	<li id = 'pagenext'>
+		    		{% if paginate.page ==1 %}
+		        		<a href='#'>上一页</a>
+		        	{% else %}
+		        		<a href='/article/index?page={{paginate.pre_num}}'>上一页</a>
+		    		{% endif %}
+		    	</li>
+
+			    {% for i in paginate.iter_pages() %}
+			    	{% if i == paginate.page %}
+			        	<li><a class="currentpage" href="/article/index?page={{ i }}">{{ i }}</a></li>
+			        {% else %}
+			    		<li><a href="/article/index?page={{ i }}">{{ i }}</a></li>
+			    	{% endif %}
+			    {% endfor %}
+
+			    <li id = 'pagenext'>
+			    	{% if paginate.page == paginate.pages %}
+		        		<a href='#'>下一页</a>
+		        	{% else %}
+		        		<a href='/article/index?page={{paginate.next_num}}'>下一页</a>
+		    		{% endif %}
+		    	</li>
+		    </ul>
+ 		</div>
+{% endblock %}

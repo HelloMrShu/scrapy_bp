@@ -3,17 +3,26 @@
   <head>
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
   </head>
 <body>
+  <div>
+    <nav>
+      
+    </nav>
+  </div>
   <div id="content">
     {% block content %}{% endblock %}
   </div>
   
   <div id="footer">
     {% block footer %}
-      &copy; Copyright 2018 by <a href="http://docs.jinkan.org">Flask Study</a>.
+      <center>
+         &copy; Copyright 2018 by <a href="http://docs.jinkan.org">Flask Study</a>
+      </center>
     {% endblock %}
   </div>
 </body>

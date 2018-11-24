@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}flask article index{% endblock %}
+{% block content %}
+	<div class="article-hit">
+		<center>文章详情&emsp;<a href="/article/index">返回</a></center>
+	</div>
+	<div class="article-list">
+        <div class="article">
+        	<div class="article-title">
+        		<i class="fa fa-book"></i>
+        		{{ article.title}}
+        	</div>
+            <div class="article-content">
+            	{{ article.content}}
+            </div>
+        </div>
+	</div>
+{% endblock %}
