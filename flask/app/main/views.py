@@ -1,6 +1,6 @@
 from . import main
-from flask import render_template,request,url_for,redirect,abort
-from app.models import Image,Article,db
+from flask import render_template,request,url_for,redirect,abort,flash
+from app.models import Image,Article,db,Comment
 
 #首页
 @main.route('/')
@@ -73,3 +73,26 @@ def article_view():
 		return render_template('/article/view.html', article=article)
 	else:
 		abort(404)
+
+#文章评论
+@main.route('/article/comment', methods=['POST'])
+def article_comment():
+	article_id = request.form.get('article_id')
+	detail = request.form.get('detail')
+	user_id = 0
+
+	newComment = Comment(
+		article_id=article_id,
+		detail=str(detail),
+		user_id=user_id
+	)
+
+	try:
+		db.session.add(newComment)
+		db.session.commit()
+
+	except IntegrityError as e:
+		db.session.rollback()
+
+	finally:
+		return redirect(url_for('main.article_view', article_id=article_id))

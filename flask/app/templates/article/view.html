@@ -15,4 +15,19 @@
             </div>
         </div>
 	</div>
+    <div class="do-comment">
+        <form action="/article/comment" method="POST">
+            <input type="hidden" name="article_id" value="{{article.id}}" />
+            <textarea name="detail" rows="3" cols="93"></textarea>
+            <input type="submit" name="submit" value="提交评论">
+        </form>
+    </div>
+    <div class="comment">
+        {% for comment in article.comments %}
+            <div class="comment-item">
+                <div><i class="fa fa-comment">&nbsp;</i>{{ comment.detail }}</div>
+                <div class="comment-time">{{comment.created_at}}</div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
