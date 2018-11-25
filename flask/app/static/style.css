@@ -109,3 +109,17 @@ ul li a:hover{
 	_height: 400px; 
 	min-height: 400px 
 }
+.do-comment{
+	width: 700px;
+	margin: 5px auto;
+}
+.comment{
+	width: 700px;
+	margin: 20px auto 10px;
+}
+.comment-item{
+	margin: 10px auto;
+}
+.comment-time{
+	font-size: 10px;
+}
