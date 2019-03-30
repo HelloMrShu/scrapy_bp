@@ -6,7 +6,7 @@ from app.models import Image,Article,db,Comment
 # 首页
 @main.route('/')
 def index():
-	return 'Hello Flask !';
+	return 'Hello Flask !'
 
 
 # 图片列表页面

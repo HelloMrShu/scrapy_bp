@@ -7,7 +7,7 @@ This repository aims to learn python,scrapy,flask framework and so on.
 
 2 flask directory: use flask framework to show the picture data which contains:
 
-&nbsp;&nbsp;&nbsp;&nbsp; 1 Import flask framework to show the crawled data in the website, you should run pip install virtualenv to install the virtual environment before you run the program(python manage.py runserver) 
+&nbsp;&nbsp;&nbsp;&nbsp; 1 Import flask framework to show the crawled data in the website, you should run pip install virtualenv to install the virtual environment before you run the program(cd flask directory and python manage.py runserver) 
 
 &nbsp;&nbsp;&nbsp;&nbsp; 2 Add item data container and pipeline to process data.
 
