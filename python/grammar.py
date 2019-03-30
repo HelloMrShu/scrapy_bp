@@ -267,22 +267,25 @@
 
 # 21 装饰器Decorators（函数装饰器， 类装饰器）
 # 函数装饰器  是修改其他函数的功能的函数
-def wrapper(func):
-    print('exec '+str(func))
-    return func
+# def wrapper(func):
+#     print('exec '+str(func))
+#     return func
+#
+#
+# def hello():
+#     print('hello')
+#
+#
+# wrapper(hello)()
+# # 等价于 语法糖
+#
+#
+# @wrapper
+# def world():
+#     print('world')
+#
+#
+# world()
 
-
-def hello():
-    print('hello')
-
-
-wrapper(hello)()
-# 等价于 语法糖
-
-
-@wrapper
-def world():
-    print('world')
-
-
-world()
+# 22 元类 拦截并扩展类创建，提供了一种自动允许代码的方式
+# 函数和类装饰器允许拦截并扩展函数调用以及类实例创建调用
