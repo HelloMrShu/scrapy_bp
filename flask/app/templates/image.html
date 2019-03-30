@@ -26,7 +26,7 @@
 	    		{% if paginate.page ==1 %}
 	        		<a href='#'>上一页</a>
 	        	{% else %}
-	        		<a href='/list?page={{paginate.pre_num}}'>上一页</a>
+	        		<a href='/image/index?page={{paginate.pre_num}}'>上一页</a>
 	    		{% endif %}
 	    	</li>
 
@@ -34,7 +34,7 @@
 		    	{% if i == paginate.page %}
 		        	<li><a class="currentpage" href="/list?page={{ i }}">{{ i }}</a></li>
 		        {% else %}
-		    		<li><a href="/list?page={{ i }}">{{ i }}</a></li>
+		    		<li><a href="/image/index?page={{ i }}">{{ i }}</a></li>
 		    	{% endif %}
 		    {% endfor %}
 
@@ -42,7 +42,7 @@
 		    	{% if paginate.page == paginate.pages %}
 	        		<a href='#'>下一页</a>
 	        	{% else %}
-	        		<a href='/list?page={{paginate.next_num}}'>下一页</a>
+	        		<a href='/image/index?page={{paginate.next_num}}'>下一页</a>
 	    		{% endif %}
 	    	</li>
 	    </ul>
