@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}flask iamge{% endblock %}
+{% block title %}flask image{% endblock %}
 {% block content %}
 	<div class="image-list">爬虫图片列表</div>
 	<div id='imagelist'>
@@ -14,14 +14,14 @@
 		        <tr>
 		        	<td style="width:50px; text-align:center;">{{ image.id}}</td>
 		            <td style="padding:0px 2px;">{{ image.title}}</td>
-		            <td style="padding:0px 2px;"><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
+		            <td style="padding:0px 2px;"><a href='/image/view?id={{image.id}}' target="_blank">{{image.img_url}}</a></td>
 		        </tr>
 		     {% endfor %}
 
 	 	</table>
  	</div>
  	<div id='paginate'>
-	    <ul>
+	    <ul class="image_ul">
 	    	<li id = 'pagenext'>
 	    		{% if paginate.page ==1 %}
 	        		<a href='#'>上一页</a>
@@ -30,11 +30,11 @@
 	    		{% endif %}
 	    	</li>
 
-		    {% for i in paginate.iter_pages() %}
-		    	{% if i == paginate.page %}
-		        	<li><a class="currentpage" href="/list?page={{ i }}">{{ i }}</a></li>
+		    {% for page  in paginate.iter_pages(left_edge=1,left_current=1,right_current=5,right_edge=1) %}
+		    	{% if page  == paginate.page %}
+		        	<li><a class="currentpage" href="/index?page={{ page }}">{{ page }}</a></li>
 		        {% else %}
-		    		<li><a href="/image/index?page={{ i }}">{{ i }}</a></li>
+		    		<li><a href="/image/index?page={{ page }}">{{ page }}</a></li>
 		    	{% endif %}
 		    {% endfor %}
 

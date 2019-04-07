@@ -32,6 +32,7 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_COMMIT_TEARDOWN = True
+    SQLALCHEMY_ECHO = True
 
     # 额外的初始化操作
     @staticmethod

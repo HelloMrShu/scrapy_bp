@@ -6,18 +6,26 @@ from app.models import Image, Article, db, Comment
 # 首页
 @main.route('/')
 def index():
-    return 'Hello Flask !'
+    return render_template('base.html')
 
 
 # 图片列表页面
 @main.route('/image/index', methods=['GET'])
 def image_index():
-    page = int(request.args.get('page') or 1)
-    per_page = int(request.args.get('perpage') or 15)
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('perpage', 15, type=int)
 
     paginate = Image.query.paginate(page, per_page, error_out=False)
     image_list = paginate.items
-    return render_template('image.html', images=image_list, paginate=paginate)
+    return render_template('/image/list.html', images=image_list, paginate=paginate)
+
+
+# 图片列表页面
+@main.route('/image/view', methods=['GET'])
+def image_view():
+    image_id = request.args.get('id', 1, type=int)
+    image = Image.query.filter_by(id=image_id).first()
+    return render_template('/image/view.html', image=image)
 
 
 # 文章创建,编辑保存
@@ -30,7 +38,7 @@ def article_create():
         content = request.form.get('content')
         article_id = request.form.get('article_id')
 
-        newArticle = Article(title=str(title), content=str(content))
+        new_article = Article(title=str(title), content=str(content))
 
         try:
             if article_id:
@@ -39,7 +47,7 @@ def article_create():
                 article.content = content
 
             else:
-                db.session.add(newArticle)
+                db.session.add(new_article)
             db.session.commit()
 
         except:

@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}flask image{% endblock %}
+{% block content %}
+	<div class="image-list">爬虫图片详情</div>
+	<div id='imagelist'>
+		<div class="image_view">{{image.title}}</div>
+		<div>
+			<img src="{{ image.img_url }}" />
+		</div>
+ 	</div>
+{% endblock %}

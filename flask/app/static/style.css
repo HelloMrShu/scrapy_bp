@@ -33,11 +33,11 @@ td {
 	width: 700px;
 }
 
-ul{
+.image_ul{
 	list-style:none;
 }
 
-ul li{
+.image_ul li{
 	float: left;
 	display: inline-block;
 	margin-left: 5px;
@@ -46,13 +46,13 @@ ul li{
 	line-height: 32px;
 }
 
-ul li a{
+.image_ul li a{
 	padding: 5px 10px 5px 10px;
 	text-decoration: none;
 	color:gray;
 }
 
-ul li a:hover{
+.image_ul li a:hover{
 	color: gray;
 	border: 1px solid #ca0c16;
 	height: 32px;
@@ -122,4 +122,38 @@ ul li a:hover{
 }
 .comment-time{
 	font-size: 10px;
+}
+.image_view {
+    margin: 10px auto;
+}
+
+.nav_ul {
+    height: 40px;
+    line-height:40px;
+    border-bottom: #060 1px solid;
+    background-color: silver;
+}
+
+.nav_ul  ul {
+    list-style: none;
+    line-height: 40px;
+    margin-left: 100px;
+}
+
+.nav_ul  li {
+    display: block;
+    float: left;
+}
+
+.nav_ul  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.nav_ul  a:hover {
+    text-decoration:none;
+    background-color: gray;
+    color:white;
 }
