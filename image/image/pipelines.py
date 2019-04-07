@@ -8,16 +8,17 @@
 import json
 from image.db.dbhelper import DBHelper
 
+
 class ImagePipeline(object):
-	def __init__(self):
-		#self.file = open('data.json', 'wb')
-		self.db = DBHelper()
+    def __init__(self):
+        # self.file = open('data.json', 'wb')
+        self.db = DBHelper()
 
-	def process_item(self, item, spider):
-		#存文件
-		#line = json.dumps(dict(item)) + "\n"
-		#self.file.write(line.encode())
+    def process_item(self, item, spider):
+        # 存文件
+        # line = json.dumps(dict(item)) + "\n"
+        # self.file.write(line.encode())
 
-		#存数据库试试
-		self.db.insert(item)
-		return item
+        # 存数据库试试
+        self.db.insert(item)
+        return item

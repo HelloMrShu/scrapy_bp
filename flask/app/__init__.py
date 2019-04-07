@@ -8,6 +8,7 @@ import sys
 
 bootstrap = Bootstrap()
 
+
 def create_app(config_name):
     app = Flask(__name__)
     bootstrap.init_app(app)
@@ -18,5 +19,5 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
     sys.dont_write_bytecode = True
 
-    #返回app实例对象
+    # 返回app实例对象
     return app

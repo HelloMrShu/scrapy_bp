@@ -11,7 +11,7 @@ class Config:
 
     # 数据库公用配置
     # 无警告
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    # SQLALCHEMY_TRACK_MODIFICATIONS = False
     # 自动提交
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
@@ -24,7 +24,7 @@ class Config:
     MAIL_PORT = 465
     MAIL_USE_TLS = False
 
-    #文件上传的位置
+    # 文件上传的位置
     MAX_CONTENT_LENGTH = 8 * 1024 * 1024
     UPLOADED_PHOTOS_DEST = os.path.join(BASE_DIR, 'static/uploads')
 
@@ -34,8 +34,6 @@ class Config:
     SQLALCHEMY_COMMIT_TEARDOWN = True
 
     # 额外的初始化操作
-    @staticmethod 
+    @staticmethod
     def init_app(app):
         pass
-
-
