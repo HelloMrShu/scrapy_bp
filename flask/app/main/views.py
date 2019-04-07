@@ -13,9 +13,9 @@ def index():
 @main.route('/image/index', methods=['GET'])
 def image_index():
     page = int(request.args.get('page') or 1)
-    perpage = int(request.args.get('perpage') or 15)
+    per_page = int(request.args.get('perpage') or 15)
 
-    paginate = Image.query.paginate(page, perpage, error_out=False)
+    paginate = Image.query.paginate(page, per_page, error_out=False)
     image_list = paginate.items
     return render_template('image.html', images=image_list, paginate=paginate)
 

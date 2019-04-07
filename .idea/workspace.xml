@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b195475b-340c-44a2-86eb-0aab1738a1f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flask/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/app/main/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/main/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/app/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/tests/TestCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/tests/TestCase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/UserAgentMiddleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/UserAgentMiddleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/db/dbhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/db/dbhelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/image/spiders/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/image/spiders/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/app/templates/image.html" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app/templates/image.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask/tests/TestCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="-8">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -39,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image/image/spiders/image.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="-8">
               <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
             </state>
           </provider>
@@ -48,17 +36,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image/image/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/image/image/db/dbhelper.py">
+        <entry file="file://$PROJECT_DIR$/flask/app/templates/image.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="-44">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/app/main/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flask/app/static/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -84,6 +98,7 @@
         <option value="$PROJECT_DIR$/image/image/settings.py" />
         <option value="$PROJECT_DIR$/image/image/pipelines.py" />
         <option value="$PROJECT_DIR$/image/image/db/dbhelper.py" />
+        <option value="$PROJECT_DIR$/flask/app/templates/image.html" />
       </list>
     </option>
   </component>
@@ -134,6 +149,13 @@
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -174,6 +196,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -205,7 +228,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980047" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17557861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" weight="0.3291367" />
@@ -244,25 +267,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask/app/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask/app/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask/app/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -282,8 +290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/tests/TestCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="-8">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -292,7 +300,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image/image/spiders/image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="-8">
           <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
         </state>
       </provider>
@@ -334,17 +342,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image/image/items.py">
+    <entry file="file://$PROJECT_DIR$/python/mod.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/grammar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
+        <state relative-caret-position="-513" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/image/db/dbhelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="221">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/image/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/app/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/app/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask/app/templates/image.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

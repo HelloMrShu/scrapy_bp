@@ -12,9 +12,9 @@
 			{% for image in images %}
 
 		        <tr>
-		        	<td>{{ image.id}}</td>
-		            <td>{{ image.title}}</td>
-		            <td><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
+		        	<td style="width:50px; text-align:center;">{{ image.id}}</td>
+		            <td style="padding:0px 2px;">{{ image.title}}</td>
+		            <td style="padding:0px 2px;"><a href= '{{ image.img_url}}'>{{image.img_url}}</a></td>
 		        </tr>
 		     {% endfor %}
 
