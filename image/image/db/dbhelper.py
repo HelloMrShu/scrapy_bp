@@ -5,9 +5,9 @@ from image.settings import DB_CONFIG
 
 
 class DBHelper():
-    '''
+    """
     读取settings中的配置，实现数据库操作
-    '''
+    """
 
     def __init__(self):
 
