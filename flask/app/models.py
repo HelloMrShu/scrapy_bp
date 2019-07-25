@@ -40,3 +40,20 @@ class Comment(db.Model):
     article_id = db.Column(db.Integer, db.ForeignKey("article.id"))
     detail = db.Column(db.String(1024))
     created_at = db.Column(db.DateTime, default=datetime.datetime.now)
+
+
+# 定义poi类别model
+class Category(db.Model):
+    __tablename__ = 'category'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), default='', nullable=False)
+    pinyin = db.Column(db.String(32), default='', nullable=False)
+
+
+# 定义poi城市model
+class City(db.Model):
+    __tablename__ = 'cities'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), default='', nullable=False)
+    level = db.Column(db.Integer, default=0, nullable=False)
+

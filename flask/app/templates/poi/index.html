@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}flask poi index{% endblock %}
+{% block content %}
+<div class="poi">
+	{% for cat in cats %}
+        <div style="width: 200px; height: 200px; float: left">
+        	<img src="{{ url_for('static', filename=cat.img_url) }}" width="100px" height="100px" />
+            <div style="padding:0px 2px;">{{ cat.name }}</div>
+        </div>
+     {% endfor %}
+</div>
+{% endblock %}

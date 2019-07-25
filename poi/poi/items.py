@@ -33,3 +33,4 @@ class CityItem(scrapy.Item):
 # 类别数据字段定义
 class CategoryItem(scrapy.Item):
     name = scrapy.Field()
+

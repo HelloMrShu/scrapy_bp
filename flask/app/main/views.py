@@ -1,6 +1,6 @@
 from . import main
 from flask import render_template, request, url_for, redirect, abort, flash
-from app.models import Image, Article, db, Comment
+from app.models import Image, Article, db, Comment, Category, City
 
 
 # 首页
@@ -111,3 +111,20 @@ def article_comment():
 
     finally:
         return redirect(url_for('main.article_view', article_id=article_id))
+
+
+# poi 数据列表
+@main.route('/poi/index', methods=['GET'])
+def poi_index():
+    page = int(request.args.get('page') or 1)
+    perpage = int(request.args.get('perpage') or 10)
+
+    cat_id = int(request.args.get('cat_id') or 0)
+    if not cat_id:
+        cats = Category.query.all()
+        for cat in cats:
+            cat.img_url = 'images/' + cat.pinyin + '.png' 
+
+    # paginate = Article.query.paginate(page, perpage, error_out=False)
+    # articles = paginate.items
+    return render_template('poi/index.html', cats=cats)
