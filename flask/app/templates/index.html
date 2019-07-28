@@ -8,26 +8,70 @@
       <p>Python 学习社区</p>
     </div>
   </div>
-  <div class="row" id="row-margin" style="margin-left: 100px;">
-    <div class="col-xs-6 col-md-6">
-      <pre>
-        # Python 3: Simple output (with Unicode)
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+        <div class="code-box">
+          <div class="box-header">
+            <p>Terminal</p>
+          </div>
+          <div class="box-code tab-page active-page">
+            <pre>
+  <span class="comments"># Python 3: Simple output (with Unicode)</span>
+  <span class="k">&gt;&gt;&gt;</span> print("Hello, I'm Python!")
+  <span class="output">Hello, I'm Python!</span>
 
-        &gt;&gt;&gt; print("Hello, I'm Python!")
-        Hello, I'm Python!
-
-        # Input, assignment
-        &gt;&gt;&gt; name = input('What is your name?\n')
-        &gt;&gt;&gt; print('Hi, %s.' % name)
-
-        &gt;&gt;&gt; What is your name?
-        &gt;&gt;&gt; Python
-        &gt;&gt;&gt; Hi, Python.
-      </pre>
+  <span class="k">&gt;&gt;&gt;</span> name = input('What is your name?\n')
+  <span class="k">&gt;&gt;&gt;</span> print('Hi, %s.' % name)
+  <span class="output">What is your name?
+  Python
+  Hi, Python.</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6">
+          <div class="intro">
+          Python is a programming language that lets you work quickly and integrate systems more effectively.
+          </div>
+      </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        Python is a programming language that lets you work quickly
-        and integrate systems more effectively.
+
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+          <div class="intro">
+          Python is a programming language that lets you work quickly and integrate systems more effectively.
+          </div>
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <div class="code-box">
+          <div class="box-header">
+            <p>Terminal</p>
+          </div>
+          <div class="box-code tab-page active-page">
+            <pre>
+  <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> pip install scrapy
+  <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> cat &gt; myspider.py
+
+  <span class="kn">import</span> <span class="nn">scrapy</span>
+
+  <span class="k">class</span> PoiSpider(scrapy.Spider):
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'blogspider'</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">'https://www.poilist.cn'</span><span class="p">]</span>
+
+    <span class="k">def</span> parse(self, response):</span>
+        <span class="k">for</span><span> title in response.css('h2'):</span>
+            <span class="k">yield</span><span> {'title': title.css('a ::text').get()}</span>
+
+        <span class="k">for</span> <span>next_page in response.css('a.next-posts-link'):</span>
+            <span class="k">yield</span> <span class="n">response.follow(next_page,self.parse)</span>
+  <hr class="pre-hr" />
+  <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> scrapy runspider myspider.py
+            </pre>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  
 {% endblock %}

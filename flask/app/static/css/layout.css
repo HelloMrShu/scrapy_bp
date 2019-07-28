@@ -1,15 +1,83 @@
-
-body {
-	min-height:100%;
-	margin:0;
-	padding:0;
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
 }
 
 #jumb {
 	text-align: center;
 }
 
-#row-margin: {
-	margin-left:100px;
-	margin-right:100px;
+.box-header {
+    background: #a7a9ac;
+    font-size: 14px;
+    padding: 3px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+}
+
+.code-box {
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+  background-color: #383838;
+  border-radius: 6px;
+  overflow: hidden; 
+}
+.code-box .tab-page {
+  display: none; 
+}
+.code-box .active-page {
+  display: block; 
+}
+.ns, .k {
+  color: #A4DB85;
+  font-weight: bold; 
+}
+
+.box-code {
+    padding: 10px 0px;
+    color: #ffed79;
+    line-height: 1.4;
+    font-size: 12px;
+    font-family: Courier, "Ubuntu Mono", Ubuntu, sans-serif, sans-serif;
+}
+
+.prompt {
+    color: #FF8080;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+    background-color: #383838;
+    color: #ffed79;
+    border: 0px;
+    font-weight: bold;
+    font-family: Courier, "Ubuntu Mono", Ubuntu, sans-serif, sans-serif;
+}
+
+pre code {
+  color: #ffed79;
+  font-weight: normal;
+}
+
+pre .comments {
+    color: #A7A9AC;
+}
+
+.pre-hr {
+	border: 1px;
+	height: 1px;
+	background-color: silver;
+}
+
+.intro {
+	height: 100px;
+	vertical-align: middle;
 }
