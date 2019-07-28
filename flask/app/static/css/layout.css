@@ -81,3 +81,7 @@ pre .comments {
 	height: 100px;
 	vertical-align: middle;
 }
+
+.nav-ul a {
+	color: gray;
+}
