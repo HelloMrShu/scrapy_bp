@@ -2,24 +2,25 @@
 <html>
   <head>
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <title>{% block title %}{% endblock %} - My Webpage</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/poi.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <title>{% block title %}{% endblock %} - My Python Webpage</title>
     {% endblock %}
   </head>
 <body>
-  <div>
+  <div class="container">
     <nav>
-      <ul class="nav_ul">
-        <li><a href='/'>首页</a></li>
-        <li><a href='/article/index'>文章</a></li>
-        <li><a href='/image/index'>图片</a></li>
-        <li><a href='/poi/index'>POI</a></li>
-
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="/">首页</a></li>
+        <li role="presentation"><a href='/article/index'>文章</a></li>
+        <li role="presentation"><a href='/image/index'>图片</a></li>
+        <li role="presentation"><a href='/poi/index'>POI</a></li>
       </ul>
     </nav>
   </div>
+
   <div class="content">
     {% block content %}{% endblock %}
   </div>

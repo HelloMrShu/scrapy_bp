@@ -1,5 +1,9 @@
-/*
-body{min-height:100%;margin:0;padding:0;}
+.poi {
+	width:1000px;
+	height: auto;
+	text-align: center;
+	margin: 20px auto;
+}
 
 #nav{
 	height: 100px;
@@ -156,4 +160,4 @@ td {
     text-decoration:none;
     background-color: gray;
     color:white;
-}*/
+}

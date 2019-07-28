@@ -1,0 +1,15 @@
+
+body {
+	min-height:100%;
+	margin:0;
+	padding:0;
+}
+
+#jumb {
+	text-align: center;
+}
+
+#row-margin: {
+	margin-left:100px;
+	margin-right:100px;
+}
