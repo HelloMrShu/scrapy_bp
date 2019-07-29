@@ -1,0 +1,133 @@
+.paginate{
+	margin-top: 30px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	width: 100%;
+}
+
+.image_ul{
+	list-style:none;
+}
+
+.image_ul li{
+	float: left;
+	display: inline-block;
+	margin-left: 5px;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+.image_ul li a{
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+	color:gray;
+}
+
+.image_ul li a:hover{
+	color: gray;
+	border: 1px solid #ca0c16;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+#pagenext{
+	width: 70px;
+}
+
+.currentpage{
+	background: #eee;
+}
+
+.article-create{
+	width: 500px;
+	margin: auto;
+}
+.article-hit{
+	height: 70px;
+	line-height: 70px;
+}
+.article-list{
+	width: 700px;
+	margin: auto;
+	background: #eee;
+	height: 400px;
+	min-height: 400px;
+}
+.article {
+	margin: 20px 20px 20px 10px;
+}
+.article-title{
+	height: 40px;
+	line-height: 40px;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.article-op{
+	height: 40px;
+	line-height: 40px;
+}
+
+.article-op-level {
+	float: left;
+}
+#article-op-btn{
+	text-decoration: none;
+	color: gray;
+}
+.article-content{
+	_height: 400px; 
+	min-height: 400px 
+}
+.do-comment{
+	width: 700px;
+	margin: 5px auto;
+}
+.comment{
+	width: 700px;
+	margin: 20px auto 10px;
+}
+.comment-item{
+	margin: 10px auto;
+}
+.comment-time{
+	font-size: 10px;
+}
+.image_view {
+    margin: 10px auto;
+}
+
+.nav_ul {
+    height: 40px;
+    line-height:40px;
+    border-bottom: #060 1px solid;
+    background-color: #5cb85c;
+}
+
+.nav_ul  ul {
+    list-style: none;
+    line-height: 40px;
+    margin-left: 100px;
+}
+
+.nav_ul  li {
+    display: block;
+    float: left;
+}
+
+.nav_ul  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.nav_ul  a:hover {
+    text-decoration:none;
+    background-color: gray;
+    color:white;
+}

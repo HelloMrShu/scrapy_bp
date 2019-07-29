@@ -97,16 +97,21 @@ pre .comments {
 .footer {
   width: 100%;
   height: 70px;
+  margin-top: 40px;
 }
 
 .footer .friend {
 	text-align: center;
-	margin: 10px auto;
+	margin: 20px auto 10px;
 }
 
 .footer a {
 	color: gray;
 	text-decoration: none;
+}
+
+.footer center {
+  margin-top: 10px;
 }
 
 .friend a:hover {

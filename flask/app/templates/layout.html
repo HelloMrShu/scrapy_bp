@@ -6,6 +6,7 @@
      <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/poi.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
     <title>{% block title %}{% endblock %} - My Python Webpage</title>
     {% endblock %}
   </head>
@@ -26,7 +27,7 @@
   </div>
   
   <div class="footer">
-    {% block footer %}
+    <hr/>
       <center>
          &copy; Copyright 2019 by <a href="#">Flask Study</a>
       </center>
@@ -37,6 +38,5 @@
         <span><a href="https://palletsprojects.com/" target="_blank"> Flask 官网</a></span>
         <span><a href="https://scrapy.org/" target="_blank"> Scrapy 官网</a></span>
       </div>
-    {% endblock %}
   </div>
 </body>
