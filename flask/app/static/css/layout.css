@@ -54,17 +54,12 @@ pre {
     display: block;
     font-family: monospace;
     white-space: pre;
-    margin: 1em 0px;
+    margin: 0.5em 0px;
     background-color: #383838;
     color: #ffed79;
     border: 0px;
     font-weight: bold;
     font-family: Courier, "Ubuntu Mono", Ubuntu, sans-serif, sans-serif;
-}
-
-pre code {
-  color: #ffed79;
-  font-weight: normal;
 }
 
 pre .comments {
@@ -75,6 +70,8 @@ pre .comments {
 	border: 1px;
 	height: 1px;
 	background-color: silver;
+	width: 95%;
+	margin: 0 auto;
 }
 
 .intro {
@@ -84,4 +81,32 @@ pre .comments {
 
 .nav-ul a {
 	color: gray;
+}
+
+.nav-ul a:hover {
+	font-weight: bold;
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+}
+
+.footer .friend {
+	text-align: center;
+	margin: 10px auto;
+}
+
+.friend a {
+	color: gray;
+	text-decoration: none;
+}
+
+.friend a:hover {
+	color: black;
+	font-weight: bold;
+}
+
+.friend span{
+	margin-right: 15px;
 }

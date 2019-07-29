@@ -9,6 +9,8 @@
     </div>
   </div>
   <div class="container">
+
+    <!-- Python -->
     <div class="row">
       <div class="col-xs-6 col-md-6">
         <div class="code-box">
@@ -19,8 +21,7 @@
             <pre>
   <span class="comments"># Python 3: Simple output (with Unicode)</span>
   <span class="k">&gt;&gt;&gt;</span> print("Hello, I'm Python!")
-  <span class="output">Hello, I'm Python!</span>
-
+  <span class="output">Hello, I'm Python!</span><br/>
   <span class="k">&gt;&gt;&gt;</span> name = input('What is your name?\n')
   <span class="k">&gt;&gt;&gt;</span> print('Hi, %s.' % name)
   <span class="output">What is your name?
@@ -32,15 +33,16 @@
       </div>
       <div class="col-xs-6 col-md-6">
           <div class="intro">
-          Python is a programming language that lets you work quickly and integrate systems more effectively.
+          Python is a programming language that lets you work quickly and integrate systems more effectively.Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
           </div>
       </div>
     </div>
 
+    <!-- Flask -->
     <div class="row">
       <div class="col-xs-6 col-md-6">
           <div class="intro">
-          Python is a programming language that lets you work quickly and integrate systems more effectively.
+          Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja and has become one of the most popular Python web application frameworks.
           </div>
       </div>
       <div class="col-xs-6 col-md-6">
@@ -50,11 +52,39 @@
           </div>
           <div class="box-code tab-page active-page">
             <pre>
+  <span class="k">from</span> flask <span class="k">import</span> Flask, escape, request</span><br/>
+  <span class="n">name</span> <span class="prompt">=</span> <span class="s">Flask(__name__)</span><br/>
+  <span class="n">@app.route('/')</span>
+  <span class="k">def</span><span> hello():</span>
+    <span>name</span><span class="prompt"> =</span><span> request.args.get("name", "World")</span>
+    <span class="k">return</span><span> f'Hello, {escape(name)}!'</span>
+  <hr class="pre-hr" />
+  <span class="prompt"><i class="fa fa-dollar"></i></span><span> python manage.py runserver</span><br/>
+  <span>* Serving Flask app "app" (lazy loading)</span>
+  <span>* Environment: production</span>
+  <span>* Debug mode: on</span>
+  <span>* Restarting with windowsapi reloader</span>
+  <span>* Debugger is active!</span>
+  <span>* Debugger PIN: 241-932-681</span>
+  <span>* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrapy -->
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+        <div class="code-box">
+          <div class="box-header">
+            <p>Terminal</p>
+          </div>
+          <div class="box-code tab-page active-page">
+            <pre>
   <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> pip install scrapy
-  <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> cat &gt; myspider.py
-
-  <span class="kn">import</span> <span class="nn">scrapy</span>
-
+  <span class="prompt" onselectstart="return false"><i class="fa fa-dollar"></i></span> cat &gt; myspider.py<br/>
+  <span class="kn">import</span> <span class="nn">scrapy</span><br/>
   <span class="k">class</span> PoiSpider(scrapy.Spider):
     <span class="n">name</span> <span class="o">=</span> <span class="s">'blogspider'</span>
     <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">'https://www.poilist.cn'</span><span class="p">]</span>
@@ -70,6 +100,12 @@
             </pre>
           </div>
         </div>
+      </div>
+      <div class="col-xs-6 col-md-6">
+          <div class="intro">
+          An open source and collaborative framework for extracting the data you need from websites.
+          In a fast, simple, yet extensible way.
+          </div>
       </div>
     </div>
   </div>
