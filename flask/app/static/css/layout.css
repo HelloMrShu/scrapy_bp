@@ -7,6 +7,10 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
 	text-align: center;
 }
 
+.content {
+  min-height: 500px;
+}
+
 .box-header {
     background: #a7a9ac;
     font-size: 14px;
@@ -114,7 +118,7 @@ pre .comments {
   margin-top: 10px;
 }
 
-.friend a:hover {
+.footer a:hover {
 	color: black;
 	font-weight: bold;
 }
