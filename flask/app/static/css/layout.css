@@ -76,7 +76,14 @@ pre .comments {
 
 .intro {
 	height: 100px;
+	margin: 70px auto;
 	vertical-align: middle;
+}
+
+.intro p {
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;
 }
 
 .nav-ul a {
@@ -97,7 +104,7 @@ pre .comments {
 	margin: 10px auto;
 }
 
-.friend a {
+.footer a {
 	color: gray;
 	text-decoration: none;
 }
