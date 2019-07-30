@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 {% block title %}flask article create{% endblock %}
 {% block content %}
-	<div class="article-create">
-		<div class="article-hit">编辑文章</div>
+<div class="container">
+	<div class="row">
+		<div class="article-release">
+			<a href="/article/index"><i class="fa fa-angle-left">&nbsp;</i>返回列表</a>
+		</div>
 		<form action="/article/create" method="post">
 			<div class="form-group">
 			    <label for="title">Title</label>
@@ -10,11 +13,12 @@
 			 </div>
 			 <div class="form-group">
 			    <label for="title">Content</label>
-			    <textarea class="form-control" rows="3" name="content" placeholder="文章内容">{{article.content}}
+			    <textarea class="form-control" rows="10" name="content" placeholder="文章内容">{{article.content}}
 			    </textarea>
 			 </div>
 			 <input type="hidden" name="article_id" value="{{article.id}}" />
 		    <input type="submit" id="submit" value="更新">
 		</form>
 	</div>
+</div>
 {% endblock %}

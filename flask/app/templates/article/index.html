@@ -2,8 +2,13 @@
 {% block title %}flask article index{% endblock %}
 {% block content %}
 <div class="container">
+	<div class="row">
+		<div class="article-release">
+			<a href="/article/create">文章发布</a>
+		</div>
+	</div>
 	{% for article in articles %}
-        <div class="article">
+        <div class="article-item">
         	<div class="article-title">
         		<i class="fa fa-book">&nbsp;</i>
         		{{ article.title }}

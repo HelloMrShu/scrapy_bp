@@ -1,0 +1,35 @@
+.image_ul{
+	list-style:none;
+}
+
+.image_ul li{
+	float: left;
+	display: inline-block;
+	margin-left: 5px;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+.image_ul li a{
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+	color:gray;
+	border-radius: 5px;
+}
+
+.image_ul li a:hover{
+	color: gray;
+	border: 1px solid silver;
+	height: 32px;
+	width: 32px;
+	line-height: 32px;
+}
+
+#pagenext{
+	width: 70px;
+}
+
+.currentpage{
+	background: #eee;
+}
