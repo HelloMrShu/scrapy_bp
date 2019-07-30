@@ -1,33 +1,42 @@
 {% extends "layout.html" %}
 {% block title %}flask article index{% endblock %}
 {% block content %}
-	<div class="article-hit">
-		<center>文章详情&emsp;<a href="/article/index">返回</a></center>
-	</div>
-	<div class="article-list">
-        <div class="article">
-        	<div class="article-title">
-        		<i class="fa fa-book"></i>
-        		{{ article.title}}
-        	</div>
-            <div class="article-content">
-            	{{ article.content}}
-            </div>
+<div class="container">
+    <div class="row" id='shadow'>
+    	<div class="article-release">
+            <a href="/article/index"><i class="fa fa-angle-left">&nbsp;</i>返回列表</a>
         </div>
-	</div>
-    <div class="do-comment">
+    	<div class="article-item">
+            <div class="article">
+            	<div class="article-title">
+            		<i class="fa fa-book">&nbsp;</i>
+            		{{ article.title}}
+            	</div>
+                <div class="article-content">
+                	{{ article.content}}
+                </div>
+            </div>
+    	</div>
+        <hr/>
+    </div>
+    <div class="row" id="gap">
         <form action="/article/comment" method="POST">
             <input type="hidden" name="article_id" value="{{article.id}}" />
             <textarea name="detail" rows="3" cols="93"></textarea>
-            <input type="submit" name="submit" value="提交评论">
+            <div>
+                <input type="submit" name="submit" value="提交评论">
+            </div>
         </form>
     </div>
-    <div class="comment">
+    <div class="row" id="gap">
+        <div class="comment">
         {% for comment in article.comments %}
             <div class="comment-item">
-                <div><i class="fa fa-comment">&nbsp;</i>{{ comment.detail }}</div>
+                <div><i class="fa fa-comment">&emsp;</i>{{ comment.detail }}</div>
                 <div class="comment-time">{{comment.created_at}}</div>
             </div>
         {% endfor %}
     </div>
+    </div>
+</div>
 {% endblock %}

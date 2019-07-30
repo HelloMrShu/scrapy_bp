@@ -24,11 +24,6 @@
 	text-decoration: none;
 }
 
-.article-hit{
-	height: 70px;
-	line-height: 70px;
-}
-
 .article-list{
 	width: 700px;
 	margin: auto;
@@ -69,12 +64,13 @@
 	width: 700px;
 	margin: 5px auto;
 }
-.comment{
-	width: 700px;
-	margin: 20px auto 10px;
+
+.comment {
+	margin-top: 20px;
 }
+
 .comment-item{
-	margin: 10px auto;
+	margin-top: 10px;
 }
 .comment-time{
 	font-size: 10px;
@@ -83,33 +79,6 @@
     margin: 10px auto;
 }
 
-.nav_ul {
-    height: 40px;
-    line-height:40px;
-    border-bottom: #060 1px solid;
-    background-color: #5cb85c;
-}
-
-.nav_ul  ul {
-    list-style: none;
-    line-height: 40px;
-    margin-left: 100px;
-}
-
-.nav_ul  li {
-    display: block;
-    float: left;
-}
-
-.nav_ul  a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 0 20px;
-}
-
-.nav_ul  a:hover {
-    text-decoration:none;
-    background-color: gray;
-    color:white;
+#gap textarea {
+	border-radius: 5px;
 }
