@@ -30,6 +30,19 @@
 	width: 70px;
 }
 
-.currentpage{
+.active-page{
 	background: #eee;
+}
+
+.common-height {
+	height: 50px;
+	line-height: 50px;
+	padding: 5px auto;
+	border: 1px dotted silver;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
 }

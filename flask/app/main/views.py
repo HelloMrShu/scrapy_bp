@@ -13,7 +13,7 @@ def index():
 @main.route('/image/index', methods=['GET'])
 def image_index():
     page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('perpage', 15, type=int)
+    per_page = request.args.get('perpage', 10, type=int)
 
     paginate = Image.query.paginate(page, per_page, error_out=False)
     image_list = paginate.items

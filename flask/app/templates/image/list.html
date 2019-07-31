@@ -1,51 +1,50 @@
 {% extends "layout.html" %}
 {% block title %}flask image{% endblock %}
 {% block content %}
-	<div class="image-list">爬虫图片列表</div>
-	<div id='imagelist'>
-		<table>
-			<tr>
-			    <th>ID</th>
-			    <th>标题</th>
-			    <th>图片路径</th>
-			 </tr>
-			{% for image in images %}
-
-		        <tr>
-		        	<td style="width:50px; text-align:center;">{{ image.id}}</td>
-		            <td style="padding:0px 2px;">{{ image.title}}</td>
-		            <td style="padding:0px 2px;"><a href='/image/view?id={{image.id}}' target="_blank">{{image.img_url}}</a></td>
-		        </tr>
-		     {% endfor %}
-
-	 	</table>
- 	</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 common-height">主题</div>
+		<div class="col-md-9 common-height">图片</div>
+	</div>
+	{% for image in images %}
+	<div class="row">
+        <div class="col-md-3 common-height">
+        	{{ image.title}}
+        </div>
+        <div class="col-md-9 common-height">
+        	<a href='/image/view?id={{image.id}}' target="_blank">
+        		{{image.img_url}}
+        	</a>
+        </div>
+    </div>
+    {% endfor %}
+ 	
  	<div id='paginate'>
 	    <ul class="image_ul">
 	    	<li id = 'pagenext'>
-	    		{% if paginate.page ==1 %}
-	        		<a href='#'>上一页</a>
-	        	{% else %}
+	    		{% if paginate.has_prev %}
 	        		<a href='/image/index?page={{paginate.pre_num}}'>上一页</a>
+	        	{% else %}
+	        		<a href='/image/index?page=1'>上一页</a>
 	    		{% endif %}
 	    	</li>
 
-		    {% for page  in paginate.iter_pages(left_edge=1,left_current=1,right_current=5,right_edge=1) %}
+		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
 		    	{% if page  == paginate.page %}
-		        	<li><a class="currentpage" href="/index?page={{ page }}">{{ page }}</a></li>
-		        {% else %}
+		        	<li><a class="active-page" href="/index?page={{ page }}">{{ page }}</a></li>
+		        {% elif page %}
 		    		<li><a href="/image/index?page={{ page }}">{{ page }}</a></li>
 		    	{% endif %}
 		    {% endfor %}
 
 		    <li id = 'pagenext'>
-		    	{% if paginate.page == paginate.pages %}
-	        		<a href='#'>下一页</a>
-	        	{% else %}
+		    	{% if paginate.has_next %}
 	        		<a href='/image/index?page={{paginate.next_num}}'>下一页</a>
+	        	{% else %}
+	        		<a href='/image/index?page={{ paginate.pages }}'>下一页</a>
 	    		{% endif %}
 	    	</li>
 	    </ul>
  	</div>
-
+</div>
 {% endblock %}
