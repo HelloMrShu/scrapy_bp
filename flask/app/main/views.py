@@ -113,12 +113,30 @@ def article_comment():
         return redirect(url_for('main.article_view', article_id=article_id))
 
 
-# category 数据列表
-@main.route('/poi/index', methods=['GET'])
-def poi_index():
+# poi 分类数据列表
+@main.route('/poi/category', methods=['GET'])
+def poi_category():
     cat_id = int(request.args.get('cat_id') or 0)
     if not cat_id:
         cats = Category.query.all()
         for cat in cats:
             cat.img_url = 'images/' + cat.pinyin + '.png'
-    return render_template('poi/index.html', cats=cats)
+    return render_template('/poi/category.html', cats=cats)
+
+
+# poi 分类下的城市数据
+@main.route('/poi/<category_name>/city', methods=['GET'])
+def poi_city(category_name):
+    city_id = int(request.args.get('city_id') or 0)
+    if not city_id:
+        cities = City.query.all()
+    return render_template('/poi/city.html', cities=cities)
+
+
+# poi 分类-城市下的poi数据
+@main.route('/poi/<category_name>/city_name/list', methods=['GET'])
+def poi_city(category_name, city_name):
+    city_id = int(request.args.get('city_id') or 0)
+    if not city_id:
+        cities = City.query.all()
+    return render_template('/poi/city.html', cities=cities)

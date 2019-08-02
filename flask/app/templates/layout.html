@@ -8,6 +8,8 @@
      <link rel="stylesheet" href="{{ url_for('static', filename='css/poi.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='css/image.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/category.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/city.css') }}">
     <title>{% block title %}{% endblock %} - My Python Webpage</title>
     {% endblock %}
   </head>
@@ -18,7 +20,7 @@
         <li role="presentation"><a href="/">首页</a></li>
         <li role="presentation"><a href='/article/index'>文章</a></li>
         <li role="presentation"><a href='/image/index'>图片</a></li>
-        <li role="presentation"><a href='/poi/index'>POI</a></li>
+        <li role="presentation"><a href='/poi/category'>POI</a></li>
       </ul>
     </nav>
   </div>

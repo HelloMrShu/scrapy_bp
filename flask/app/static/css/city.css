@@ -1,0 +1,21 @@
+.city {
+	padding-top: 30px;
+	border-radius: 5px;
+	text-align: center;
+	transform: translate(0, 0);
+	opacity: 0.8;
+}
+
+.city:hover {
+	opacity: 1;
+	transform: translate(10px);
+	transform: scale(1.2,1.2);
+	font-weight: bold;
+}
+
+.city a {
+	 width:100px;
+	 height:100px;
+	 color: gray;
+	 text-decoration: none;
+}

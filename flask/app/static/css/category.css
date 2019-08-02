@@ -1,0 +1,26 @@
+.image {
+	padding-top: 30px;
+	border-radius: 5px;
+	text-align: center;
+	transform: translate(0, 0);
+	opacity: 0.8;
+}
+
+.image:hover {
+	opacity: 1;
+	transform: translate(10px);
+	transform: scale(1.2,1.2)
+}
+
+.image .name {
+	margin: 5px auto;
+	border-radius: 10px;
+	width: 100px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.image img {
+	 width:100px;
+	 height:100px;
+}
