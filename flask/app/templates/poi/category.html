@@ -7,7 +7,7 @@
 		{% for cat in cats %}
 		<div class="col-md-2">
 	        <div class="image">
-	        	<a href="/poi/{{ cat.name }}/city">
+	        	<a href="/poi/{{ cat.name }}">
 	        		<img src="{{ url_for('static', filename=cat.img_url) }}" />
 	    		</a>
 	            <div class="name">{{ cat.name }}</div>

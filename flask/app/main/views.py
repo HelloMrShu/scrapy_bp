@@ -125,18 +125,25 @@ def poi_category():
 
 
 # poi 分类下的城市数据
-@main.route('/poi/<category_name>/city', methods=['GET'])
-def poi_city(category_name):
-    city_id = int(request.args.get('city_id') or 0)
-    if not city_id:
-        cities = City.query.all()
-    return render_template('/poi/city.html', cities=cities)
-
-
-# poi 分类-城市下的poi数据
-@main.route('/poi/<category_name>/city_name/list', methods=['GET'])
+@main.route('/poi/<category_name>', defaults={"city_name": '' }, methods=['GET'])
 def poi_city(category_name, city_name):
     city_id = int(request.args.get('city_id') or 0)
     if not city_id:
         cities = City.query.all()
-    return render_template('/poi/city.html', cities=cities)
+
+    if 
+    return render_template(
+        '/poi/city.html', 
+        cities=cities,
+        category_name=category_name,
+        city_name=city_name
+    )
+
+
+# # poi 分类-城市下的poi数据
+# @main.route('/poi/<category_name>/city_name/list', methods=['GET'])
+# def poi_city(category_name, city_name):
+#     city_id = int(request.args.get('city_id') or 0)
+#     if not city_id:
+#         cities = City.query.all()
+#     return render_template('/poi/city.html', cities=cities)
