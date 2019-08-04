@@ -126,22 +126,22 @@ def poi_category():
 
 
 # poi 分类下的城市数据
-@main.route('/poi/<category_name>/<city_name>', defaults={"city_name":''}, methods=['GET'])
-def poi_city(category_name, city_name=''):
-    page = int(request.args.get('page') or 1)
-    perpage = int(request.args.get('perpage') or 10)
+@main.route('/poi/<category_name>', methods=['GET'])
+def poi_city(category_name):
+    city_name = request.args.get('city_name') or ''
+    cities = City.query.all()
 
-    if not city_name:
-        cities = City.query.all()
+    if city_name:
+        page = int(request.args.get('page') or 1)
+        perpage = int(request.args.get('perpage') or 4)
 
-    if category_name and city_name:
-        paginate = Poi.query.filter_by(category_name=category_name).paginate(page, perpage, error_out=False)
+        paginate = Poi.query.paginate(page, perpage, error_out=False)
         points = paginate.items
         return render_template(
             '/poi/list.html',
+            points=points,
             category_name=category_name,
-            city_name=city_name,
-            points=points
+            city_name=city_name
         )
     else:
         return render_template(

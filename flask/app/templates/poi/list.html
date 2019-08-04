@@ -3,13 +3,16 @@
 {% block content %}
 
 <div class="container">
-	<div class="row" id="gap">
-		{% for point in points %}
-		
-	        {{ point.name }}
-	    		
-	    {% endfor %}
-	</div>
+	{% for point in points %}
+		<div class="row" id="gap">
+			<div class="col-md-1">
+				{{ point.id}}
+			</div>
+			<div class="col-md-2">
+				{{ point.name}}
+			</div>
+		</div>
+	{% endfor %}
 </div>
 
 {% endblock %}
