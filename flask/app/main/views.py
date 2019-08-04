@@ -1,6 +1,7 @@
 from . import main
 from flask import render_template, request, url_for, redirect, abort, flash
-from app.models import Image, Article, db, Comment, Category, City
+from app.models import Image, Article, db, Comment, Category, City, Poi
+import app
 
 
 # 首页
@@ -125,25 +126,27 @@ def poi_category():
 
 
 # poi 分类下的城市数据
-@main.route('/poi/<category_name>', defaults={"city_name": '' }, methods=['GET'])
-def poi_city(category_name, city_name):
-    city_id = int(request.args.get('city_id') or 0)
-    if not city_id:
+@main.route('/poi/<category_name>/<city_name>', defaults={"city_name":''}, methods=['GET'])
+def poi_city(category_name, city_name=''):
+    page = int(request.args.get('page') or 1)
+    perpage = int(request.args.get('perpage') or 10)
+
+    if not city_name:
         cities = City.query.all()
 
-    if 
-    return render_template(
-        '/poi/city.html', 
-        cities=cities,
-        category_name=category_name,
-        city_name=city_name
-    )
-
-
-# # poi 分类-城市下的poi数据
-# @main.route('/poi/<category_name>/city_name/list', methods=['GET'])
-# def poi_city(category_name, city_name):
-#     city_id = int(request.args.get('city_id') or 0)
-#     if not city_id:
-#         cities = City.query.all()
-#     return render_template('/poi/city.html', cities=cities)
+    if category_name and city_name:
+        paginate = Poi.query.filter_by(category_name=category_name).paginate(page, perpage, error_out=False)
+        points = paginate.items
+        return render_template(
+            '/poi/list.html',
+            category_name=category_name,
+            city_name=city_name,
+            points=points
+        )
+    else:
+        return render_template(
+            '/poi/city.html',
+            cities=cities,
+            category_name=category_name,
+            city_name=city_name
+        )

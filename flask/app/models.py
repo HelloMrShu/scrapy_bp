@@ -62,5 +62,15 @@ class City(db.Model):
 class Poi(db.Model):
     __tablename__ = 'poi'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(32), default='', nullable=False)
-    level = db.Column(db.Integer, default=0, nullable=False)
+    name = db.Column(db.String(128), default='', nullable=False)
+    province = db.Column(db.String(64), default='', nullable=False)
+    city = db.Column(db.String(64), default='', nullable=False)
+    district = db.Column(db.String(64), default='', nullable=False)
+    code = db.Column(db.String(16), default='', nullable=False)
+    phone_no = db.Column(db.String(64), default='', nullable=False)
+    region = db.Column(db.String(64), default='', nullable=False)
+    location = db.Column(db.String(256), default='', nullable=False)
+    category = db.Column(db.String(64), default='', nullable=False)
+    sub_category = db.Column(db.String(64), default='', nullable=False)
+    longitude = db.Column(db.String(64), default=0, nullable=False)
+    latitude = db.Column(db.String(64), default=0, nullable=False)
