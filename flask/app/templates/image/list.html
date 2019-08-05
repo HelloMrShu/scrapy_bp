@@ -2,7 +2,7 @@
 {% block title %}flask image{% endblock %}
 {% block content %}
 <div class="container">
-	<div class="row">
+	<div class="row" id="common-gap">
 		<div class="col-md-3 common-height">主题</div>
 		<div class="col-md-9 common-height">图片</div>
 	</div>
@@ -31,9 +31,9 @@
 
 		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
 		    	{% if page  == paginate.page %}
-		        	<li><a class="active-page" href="/index?page={{ page }}">{{ page }}</a></li>
+		        	<a class="active-page" href="/image/index?page={{ page }}"><li>{{ page }}</li></a>
 		        {% elif page %}
-		    		<li><a href="/image/index?page={{ page }}">{{ page }}</a></li>
+		    		<a href="/image/index?page={{ page }}"><li>{{ page }}</li></a>
 		    	{% endif %}
 		    {% endfor %}
 

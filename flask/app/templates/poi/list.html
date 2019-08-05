@@ -3,16 +3,52 @@
 {% block content %}
 
 <div class="container">
+	<div class="row" id="common-gap">
+		<div class="col-md-1"> ID </div>
+		<div class="col-md-2"> 名称 </div>
+		<div class="col-md-6"> 详细地址 </div>
+		<div class="col-md-1"> 分类 </div>
+		<div class="col-md-1"> 经度 </div>
+		<div class="col-md-1"> 纬度 </div>
+	</div>
 	{% for point in points %}
-		<div class="row" id="gap">
-			<div class="col-md-1">
-				{{ point.id}}
-			</div>
-			<div class="col-md-2">
-				{{ point.name}}
-			</div>
+		<div class="row row-height">
+			<div class="col-md-1"> {{ point.id}} </div>
+			<div class="col-md-2"> {{ point.name}} </div>
+			<div class="col-md-6"> {{ point.addr}} </div>
+			<div class="col-md-1"> {{ point.category}} </div>
+			<div class="col-md-1"> {{ point.longitude}} </div>
+			<div class="col-md-1"> {{ point.latitude}} </div>
 		</div>
 	{% endfor %}
+
+	<div id='paginate'>
+	    <ul class="image_ul">
+	    	<li id = 'pagenext'>
+	    		{% if paginate.has_prev %}
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.pre_num) }}">上一页</a>
+	        	{% else %}
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=1) }}">上一页</a>
+	    		{% endif %}
+	    	</li>
+
+		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+		    	{% if page  == paginate.page %}
+		        	<a class="active-page" href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
+		        {% elif page %}
+		    		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
+		    	{% endif %}
+		    {% endfor %}
+
+		    <li id = 'pagenext'>
+		    	{% if paginate.has_next %}
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.next_num) }}">下一页</a>
+	        	{% else %}
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city.name, page=paginate.pages) }}">下一页</a>
+	    		{% endif %}
+	    	</li>
+	    </ul>
+ 	</div>
 </div>
 
 {% endblock %}

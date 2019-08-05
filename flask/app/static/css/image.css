@@ -1,43 +1,41 @@
 .image_ul{
 	list-style:none;
+	margin-top: 5px;
 }
 
 .image_ul li{
 	float: left;
 	display: inline-block;
-	margin-left: 5px;
 	height: 32px;
-	width: 32px;
+	width: 50px;
 	line-height: 32px;
-}
-
-.image_ul li a{
-	padding: 5px 10px 5px 10px;
-	text-decoration: none;
-	color:gray;
 	border-radius: 5px;
+	margin-right: 5px;
 }
 
-.image_ul li a:hover{
+.image_ul a{
+	text-decoration: none;
 	color: gray;
+	text-align: center;
+}
+
+.image_ul li:hover{
 	border: 1px solid silver;
 	height: 32px;
-	width: 32px;
 	line-height: 32px;
+	width: 50px;
 }
 
 #pagenext{
-	width: 70px;
+	width: 50px;
+	text-align: center;
 }
 
 .common-height {
-	height: 50px;
-	line-height: 50px;
+	height: 45px;
+	line-height: 45px;
 	padding: 5px auto;
-	border: 1px dotted silver;
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border-bottom: 1px dotted silver;
 	overflow:hidden; 
 	white-space:nowrap; 
 	text-overflow:ellipsis; 
