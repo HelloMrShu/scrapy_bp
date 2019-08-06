@@ -3,8 +3,13 @@
 {% block content %}
 
 <div class="container">
-	<div class="row" id="gap">
-		{% for city in cities %}
+	
+	<div class="row" id="common-gap">
+		<div class="col-md-1 city-level">一级城市</div>
+	</div>
+	<div class="row">
+	{% for city in cities %}
+		{% if city.level == 1 %}
 		<div class="col-md-1">
 	        <div class="city">
 	        	<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city.name) }}">
@@ -12,8 +17,44 @@
 	    		</a>
 	        </div>
 	    </div>
-	    {% endfor %}
+	    {% endif %}
+	{% endfor %}
 	</div>
+
+	<div class="row" id="common-gap">
+		<div class="col-md-1 city-level">二级城市</div>
+	</div>
+	<div class="row">
+	{% for city in cities %}
+	    {% if city.level == 2 %}
+		<div class="col-md-1">
+	        <div class="city">
+	        	<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city.name) }}">
+	        		{{ city.name}}
+	    		</a>
+	        </div>
+	    </div>
+	    {% endif %}
+	{% endfor %}
+	</div>
+
+	<div class="row" id="common-gap">
+		<div class="col-md-1 city-level">三级城市</div>
+	</div>
+    <div class="row">
+	{% for city in cities %}
+	    {% if city.level == 3 %}
+		<div class="col-md-1">
+	        <div class="city">
+	        	<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city.name) }}">
+	        		{{ city.name}}
+	    		</a>
+	        </div>
+	    </div>
+	    {% endif %}
+    {% endfor %}
+	</div>
+
 </div>
 
 {% endblock %}

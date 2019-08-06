@@ -1,21 +1,32 @@
 .city {
-	padding-top: 30px;
 	border-radius: 5px;
 	text-align: center;
-	transform: translate(0, 0);
-	opacity: 0.8;
+	margin: 5px 0px;
+	border: 1px dotted silver;
+	background-color: white;
 }
 
 .city:hover {
-	opacity: 1;
-	transform: translate(10px);
-	transform: scale(1.2,1.2);
-	font-weight: bold;
+	background-color: #ec971f;
+	color: white;
 }
 
 .city a {
-	 width:100px;
-	 height:100px;
-	 color: gray;
-	 text-decoration: none;
+	color: gray;
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	display: block;
+	padding: 5px 0px;
+}
+
+.city a:hover {
+	color: white;
+}
+
+.city-level {
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	background-color: #e1d9aa;
 }
