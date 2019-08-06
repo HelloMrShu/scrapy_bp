@@ -135,7 +135,8 @@ def poi_city(category_name):
         page = int(request.args.get('page') or 1)
         perpage = int(request.args.get('perpage') or 10)
 
-        paginate = Poi.query.filter_by().paginate(page, perpage, error_out=False)
+        query = Poi.query.filter_by(city=city_name)
+        paginate = query.paginate(page, perpage, error_out=False)
         points = paginate.items
         for point in points:
             point.addr = point.province +' ' + point.region + ' '+ point.location

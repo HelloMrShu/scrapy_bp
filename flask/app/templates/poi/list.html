@@ -32,9 +32,9 @@
 	    		{% endif %}
 	    	</li>
 
-		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+		    {% for page in paginate.iter_pages(left_edge=1, left_current=1, right_current=1, right_edge=1) %}
 		    	{% if page  == paginate.page %}
-		        	<a class="active-page" href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
+		        	<a class="active" href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
 		        {% elif page %}
 		    		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
 		    	{% endif %}
@@ -44,7 +44,7 @@
 		    	{% if paginate.has_next %}
 	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.next_num) }}">下一页</a>
 	        	{% else %}
-	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city.name, page=paginate.pages) }}">下一页</a>
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.pages) }}">下一页</a>
 	    		{% endif %}
 	    	</li>
 	    </ul>
