@@ -29,13 +29,13 @@
 	    <ul class="image_ul">
 	    	<li id = 'pagenext'>
 	    		{% if paginate.has_prev %}
-	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.pre_num) }}">上一页</a>
+	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=paginate.prev_num) }}">上一页</a>
 	        	{% else %}
 	        		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=1) }}">上一页</a>
 	    		{% endif %}
 	    	</li>
 
-		    {% for page in paginate.iter_pages(left_edge=1, left_current=1, right_current=1, right_edge=1) %}
+		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
 		    	{% if page  == paginate.page %}
 		        	<a class="active" href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
 		        {% elif page %}
