@@ -9,7 +9,7 @@
 .image:hover {
 	opacity: 1;
 	transform: translate(10px);
-	transform: scale(1.2,1.2)
+	transform: scale(1.1,1.1)
 }
 
 .image .name {
