@@ -4,7 +4,12 @@
 
 <div class="container">
 	<div class="row" id="common-gap">
-		<div class="col-md-2 city-level">{{ category_name }} / {{ city_name }}</div>
+		<div class="col-md-2 city-level">
+			<a href="{{ url_for('main.poi_category') }}">{{ category_name }}</a>
+			<i class="fa fa-angle-right"></i> 
+			<a href="{{ url_for('main.poi_city', category_name=category_name) }}">城市</a>
+			<i class="fa fa-angle-right"></i> {{ city_name }}
+		</div>
 	</div>
 	<div class="row" id="common-gap">
 		<div class="col-md-1"> ID </div>

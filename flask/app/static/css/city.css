@@ -30,3 +30,12 @@
 	border-radius: 5px;
 	background-color: #e1d9aa;
 }
+
+.city-level a {
+	color: gray;
+}
+
+.city-level a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
