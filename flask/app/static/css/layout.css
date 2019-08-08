@@ -138,3 +138,8 @@ pre .comments {
 .friend span{
 	margin-right: 15px;
 }
+
+.active-menu {
+  background-color: #EDEDED;
+
+}

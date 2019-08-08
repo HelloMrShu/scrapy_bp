@@ -18,10 +18,18 @@
   <div class="container">
     <nav>
       <ul class="nav nav-tabs nav-ul">
-        <li role="presentation"><a href="/">首页</a></li>
-        <li role="presentation"><a href='/article/index'>文章</a></li>
-        <li role="presentation"><a href='/image/index'>图片</a></li>
-        <li role="presentation"><a href='/poi/category'>POI</a></li>
+        <li role="presentation" {% if 'index' == active_page %} class="active-menu"{% endif %}>
+          <a href="{{ url_for('main.index') }}">首页</a>
+        </li>
+        <li role="presentation" {% if 'article' == active_page %} class="active-menu"{% endif %}>
+          <a href="{{ url_for('main.article_index') }}">文章</a>
+        </li>
+        <li role="presentation" {% if 'image' == active_page %} class="active-menu"{% endif %}>
+          <a href="{{ url_for('main.image_index') }}">图片</a>
+        </li>
+        <li role="presentation" {% if 'poi' == active_page %} class="active-menu"{% endif %}>
+          <a href="{{ url_for('main.poi_category') }}">POI</a>
+        </li>
       </ul>
     </nav>
   </div>
