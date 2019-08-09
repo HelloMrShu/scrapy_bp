@@ -17,6 +17,8 @@
 	text-decoration: none;
 	color: gray;
 	text-align: center;
+	display: inline-block;
+	width: 50px;
 }
 
 .image_ul li:hover{
