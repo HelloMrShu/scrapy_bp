@@ -1,6 +1,6 @@
 
 
-def printer(data = ''):
+def printer(data=''):
     """This is a print function !"""
     print(data)
 

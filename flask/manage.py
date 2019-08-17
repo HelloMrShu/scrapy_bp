@@ -14,7 +14,14 @@ app = create_app(config_name)
 app.config['DEBUG'] = True
 
 manager = Manager(app)
-# manager.add_command('db',MigrateCommand)
+
+
+@manager.command
+def task(arg):
+    """ dfadfasd
+    """
+    print(arg)
+
 
 if __name__ == '__main__':
     manager.run()

@@ -4,7 +4,7 @@ import pymysql
 from image.settings import DB_CONFIG
 
 
-class DBHelper():
+class DBHelper(object):
     """
     读取settings中的配置，实现数据库操作
     """
