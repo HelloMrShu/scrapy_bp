@@ -15,13 +15,5 @@ app.config['DEBUG'] = True
 
 manager = Manager(app)
 
-
-@manager.command
-def task(arg):
-    """ dfadfasd
-    """
-    print(arg)
-
-
 if __name__ == '__main__':
     manager.run()

@@ -1,7 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 from flask_script import Manager, Command
+from app.commands.poi2es import PoiElastic
 
 TaskCommand = Manager()
 
-from .poi2es import *
+TaskCommand.add_command('poi2es', Command(PoiElastic.create_index))
 
-TaskCommand.add_command('poi', Command(poi))
+if __name__ == '__main__':
+    TaskCommand.run()
+

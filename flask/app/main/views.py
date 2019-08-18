@@ -1,7 +1,6 @@
 from . import main
 from flask import render_template, request, url_for, redirect, abort, flash
 from app.models import Image, Article, db, Comment, Category, City, Poi
-import app
 
 
 # 首页
