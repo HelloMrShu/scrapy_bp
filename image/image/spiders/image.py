@@ -2,8 +2,6 @@
 import scrapy
 from image.items import ImageItem
 from scrapy.http import Request
-import sys
-import datetime
 from image.emailSender import emailSender  # 导入发信模块
 
 
