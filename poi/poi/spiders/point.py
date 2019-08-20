@@ -5,6 +5,7 @@ from poi.items import PoiItem
 from poi.util import datamap
 from poi.util import resolve
 from scrapy.http import Request
+import html
 
 
 class PointSpider(scrapy.Spider):
@@ -38,12 +39,12 @@ class PointSpider(scrapy.Spider):
             trs = response.xpath('//tbody/tr')
             item = PoiItem()
             for tr in trs:
-                item['name'] = tr.xpath('./td[2]/text()').extract()[0]
-                item['province'] = tr.xpath('./td[3]/text()').extract()[0]
-                item['city'] = tr.xpath('./td[4]/text()').extract()[0]
+                item['name'] = html.unescape(tr.xpath('./td[2]/text()').extract()[0])
+                item['province'] = html.unescape(tr.xpath('./td[3]/text()').extract()[0])
+                item['city'] = html.unescape(tr.xpath('./td[4]/text()').extract()[0])
 
                 district = tr.xpath('./td[5]/text()').extract()
-                item['district'] = district[0] if district else ''
+                item['district'] = html.unescape(district[0]) if district else ''
 
                 code = tr.xpath('./td[6]/text()').extract()
                 item['code'] = code[0] if code else ''
@@ -52,10 +53,10 @@ class PointSpider(scrapy.Spider):
                 item['phone_no'] = phone[0] if phone else ''
 
                 region = tr.xpath('./td[8]/text()').extract()
-                item['region'] = region[0] if region else ''
+                item['region'] = html.unescape(region[0]) if region else ''
 
                 location = tr.xpath('./td[9]/text()').extract()
-                item['location'] = location[0] if location else ''
+                item['location'] = html.unescape(location[0]) if location else ''
 
                 cate = tr.xpath('./td[10]/text()').extract()
                 item['category'] = cate[0] if cate else ''

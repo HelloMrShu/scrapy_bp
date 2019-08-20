@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from poi.items import CityItem
+import html
 
 
 class CitySpider(scrapy.Spider):
@@ -15,6 +16,6 @@ class CitySpider(scrapy.Spider):
         lis = response.xpath('//ul[@class="city-list"]/li/a/text()').extract()
         for li in lis:
             item = CityItem()
-            item['name'] = li
+            item['name'] = html.unescape(li)
             item['level'] = 1
             yield item

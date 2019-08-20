@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from poi.items import CategoryItem
+import html
 
 
 class CategorySpider(scrapy.Spider):
@@ -16,7 +17,7 @@ class CategorySpider(scrapy.Spider):
 
         item = CategoryItem()
         for name in names:
-            item['name'] = name
+            item['name'] = html.unescape(name)
             yield item
 
 
