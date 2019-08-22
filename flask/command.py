@@ -76,7 +76,7 @@ def create_index(name='location', type="poi"):
 def insert_poi(name='location', type="poi"):
     es = Elasticsearch(['127.0.0.1:9200'])
     poi_id = 1000000
-    while True:
+    while poi_id > 1:
         pois = Poi.query.filter(Poi.id < poi_id).order_by(Poi.id.desc()).limit(1000).all()
         if pois:
             actions = []
@@ -111,8 +111,8 @@ def insert_poi(name='location', type="poi"):
             # 批量处理
             success, _ = bulk(es, actions, index=name, chunk_size=100, raise_on_error=True)
             poi_id = pois[-1].id
-        else:
-            print('poi insert done!')
+            
+    print('poi insert done!')
 
 
 # 处理name里的特殊字符

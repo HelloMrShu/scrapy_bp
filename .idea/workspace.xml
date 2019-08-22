@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b195475b-340c-44a2-86eb-0aab1738a1f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/command.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/command.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flask/command.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="79" column="83" selection-start-line="79" selection-start-column="83" selection-end-line="79" selection-end-column="83" />
+            <state relative-caret-position="275">
+              <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="113" selection-end-column="12" />
               <folding>
                 <element signature="e#47#56#0" expanded="true" />
               </folding>
@@ -138,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="15" />
     <option name="width" value="1920" />
     <option name="height" value="1015" />
@@ -599,8 +598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask/command.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="79" column="83" selection-start-line="79" selection-start-column="83" selection-end-line="79" selection-end-column="83" />
+        <state relative-caret-position="275">
+          <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="113" selection-end-column="12" />
           <folding>
             <element signature="e#47#56#0" expanded="true" />
           </folding>
