@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import os
+import re
 from app import create_app
 from flask_script import Manager, Command
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from app.models import Poi
-import html
+from urllib import parse
+import logging
+
 
 config_name = os.environ.get('FLASK_CONFIG') or 'default'
 
@@ -64,8 +67,7 @@ def create_index(name='location', type="poi"):
     es = Elasticsearch(['127.0.0.1:9200'])
     if es and es.indices.exists(index=name) is not True:
         res = es.indices.create(index=name, body=_index_mappings)
-        print(res)
-        print('success')
+        print(str(res) + 'success')
     else:
         print('failed')
 
@@ -75,37 +77,50 @@ def insert_poi(name='location', type="poi"):
     es = Elasticsearch(['127.0.0.1:9200'])
     poi_id = 1000000
     while True:
-        pois = Poi.query.filter(Poi.id < poi_id).order_by(Poi.id.desc()).limit(100).all()
+        pois = Poi.query.filter(Poi.id < poi_id).order_by(Poi.id.desc()).limit(1000).all()
         if pois:
             actions = []
             for poi in pois:
-                print('dealing poi id:' + str(poi.id))
-                print('dealing poi name:' + str(poi.name))
-                action = {
-                    "_index": name,
-                    "_type": type,
-                    "_source": {
-                        "poi_id": str(poi.id),
-                        "name": html.unescape(str(poi.name).replace("-", "/")),
-                        "province": html.unescape(str(poi.province)),
-                        "city": html.unescape(str(poi.city)),
-                        "district": html.unescape(str(poi.district)),
-                        "code": str(poi.code),
-                        "phone_no": html.unescape(str(poi.phone_no)),
-                        "region": html.unescape(str(poi.region)),
-                        "location": html.unescape(str(poi.location)),
-                        "category": html.unescape(str(poi.category)),
-                        "coordinate": {"lat": str(poi.latitude), "lon": str(
-                            poi.longitude)}
+                try:
+                    result = resolve(poi.name)
+                    poi_name = result[0] if result else ''
+                    action = {
+                        "_index": name,
+                        "_type": type,
+                        "_source": {
+                            "poi_id": str(poi.id),
+                            "name": str(poi_name),
+                            "province": str(poi.province),
+                            "city": str(poi.city),
+                            "district": str(poi.district),
+                            "code": str(poi.code),
+                            "phone_no": str(poi.phone_no),
+                            "region": str(poi.region),
+                            "location": str(poi.location),
+                            "category": str(poi.category),
+                            "coordinate": {"lat": str(poi.latitude), "lon": str(
+                                poi.longitude)}
+                        }
                     }
-                }
 
-                # 批量处理
-                # actions.append(action)
-                # success, _ = bulk(es, actions, index=name, raise_on_error=True)
+                    actions.append(action)
+                except Exception as ex:
+                    print(ex)
+                    continue
+
+            # 批量处理
+            success, _ = bulk(es, actions, index=name, chunk_size=100, raise_on_error=True)
             poi_id = pois[-1].id
         else:
             print('poi insert done!')
+
+
+# 处理name里的特殊字符
+def resolve(poiname):
+    parsestr = parse.unquote(poiname)
+    pattern = r'[\u4e00-\u9fa5]+[A-Za-z]'
+    match = re.compile(pattern)
+    return match.findall(parsestr)
 
 
 if __name__ == '__main__':
