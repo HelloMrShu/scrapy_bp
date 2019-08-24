@@ -102,8 +102,8 @@ def insert_poi(name='location', type="poi"):
                                 poi.longitude)}
                         }
                     }
-
                     actions.append(action)
+
                 except Exception as ex:
                     print(ex)
                     continue
