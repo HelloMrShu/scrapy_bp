@@ -10,6 +10,7 @@ from elasticsearch.helpers import bulk
 from app.models import Poi
 from urllib import parse
 import logging
+import time
 
 
 config_name = os.environ.get('FLASK_CONFIG') or 'default'
@@ -22,7 +23,6 @@ taskManager = Manager(app)
 
 @taskManager.command
 def create_index(name='location', type="poi"):
-    print('create_index')
     _index_mappings = {
         "mappings": {
             type: {
@@ -67,13 +67,14 @@ def create_index(name='location', type="poi"):
     es = Elasticsearch(['127.0.0.1:9200'])
     if es and es.indices.exists(index=name) is not True:
         res = es.indices.create(index=name, body=_index_mappings)
-        print(str(res) + 'success')
+        print(str(res) + "\ncreate index success！")
     else:
-        print('failed')
+        print('create index failed！')
 
 
 @taskManager.command
 def insert_poi(name='location', type="poi"):
+    start_time = time.time()
     es = Elasticsearch(['127.0.0.1:9200'])
     poi_id = 1000000
     while poi_id > 1:
@@ -112,7 +113,7 @@ def insert_poi(name='location', type="poi"):
             success, _ = bulk(es, actions, index=name, chunk_size=100, raise_on_error=True)
             poi_id = pois[-1].id
             
-    print('poi insert done!')
+    print('poi insert done(s)：' + str(time.time() - start_time))
 
 
 # 处理name里的特殊字符
