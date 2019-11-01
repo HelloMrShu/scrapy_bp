@@ -23,7 +23,7 @@
 	{% for point in points %}
 		<div class="row row-height">
 			<div class="col-md-1"> {{ point.id}} </div>
-			<div class="col-md-2"> {{ point.name}} </div>
+			<div class="col-md-2"> {{ point.name_display}} </div>
 			<div class="col-md-6"> {{ point.addr}} </div>
 			<div class="col-md-1"> {{ point.category}} </div>
 			<div class="col-md-1"> {{ point.longitude}} </div>
@@ -43,7 +43,7 @@
 
 		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
 		    	{% if page  == paginate.page %}
-		        	<a class="active" href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
+		        	<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li class="active_page">{{ page }}</li></a>
 		        {% elif page %}
 		    		<a href="{{ url_for('main.poi_city', category_name=category_name, city_name=city_name, page=page) }}"><li>{{ page }}</li></a>
 		    	{% endif %}

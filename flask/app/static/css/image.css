@@ -4,7 +4,7 @@
 }
 
 .image_ul li{
-	float: left;
+	/*float: left;*/
 	display: inline-block;
 	height: 32px;
 	width: 50px;
@@ -41,4 +41,9 @@
 	overflow:hidden; 
 	white-space:nowrap; 
 	text-overflow:ellipsis; 
+}
+.active_page {
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  border: 1px solid silver;
 }

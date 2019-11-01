@@ -32,7 +32,7 @@
 
 		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
 		    	{% if page  == paginate.page %}
-		        	<a class="active-page" href="/image/index?page={{ page }}"><li>{{ page }}</li></a>
+		        	<a href="/image/index?page={{ page }}"><li class='active_page'>{{ page }}</li></a>
 		        {% elif page %}
 		    		<a href="/image/index?page={{ page }}"><li>{{ page }}</li></a>
 		    	{% endif %}

@@ -139,13 +139,15 @@ def poi_city(category_name):
         points = paginate.items
         for point in points:
             point.addr = point.province +' ' + point.region + ' '+ point.location
+            point.name_display = point.name[0:10]
 
         return render_template(
             '/poi/list.html',
             points=points,
             category_name=category_name,
             city_name=city_name,
-            paginate=paginate
+            paginate=paginate,
+            cur_page=page
         )
     else:
         return render_template(
