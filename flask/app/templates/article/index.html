@@ -32,33 +32,32 @@
             </div>
         </div>
      {% endfor %}
-	<div class='paginate'>
-		    <ul class="image_ul">
-		    	<li id = 'pagenext'>
-		    		{% if paginate.page ==1 %}
-		        		<a href='#'>上一页</a>
-		        	{% else %}
-		        		<a href='/article/index?page={{paginate.pre_num}}'>上一页</a>
-		    		{% endif %}
-		    	</li>
+     <div id='paginate'>
+	    <ul class="image_ul">
+	    	<li id = 'pagenext'>
+	    		{% if paginate.has_prev %}
+	        		<a href='/article/index?page={{paginate.pre_num}}'>上一页</a>
+	        	{% else %}
+	        		<a href='/article/index?page=1'>上一页</a>
+	    		{% endif %}
+	    	</li>
 
-			    {% for i in paginate.iter_pages() %}
-			    	{% if i == paginate.page %}
-			        	<li><a class="currentpage" href="/article/index?page={{ i }}">{{ i }}</a></li>
-			        {% else %}
-			    		<li><a href="/article/index?page={{ i }}">{{ i }}</a></li>
-			    	{% endif %}
-			    {% endfor %}
+		    {% for page in paginate.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+		    	{% if page  == paginate.page %}
+		        	<a href="/article/index?page={{ page }}"><li class='active_page'>{{ page }}</li></a>
+		        {% elif page %}
+		    		<a href="/article/index?page={{ page }}"><li>{{ page }}</li></a>
+		    	{% endif %}
+		    {% endfor %}
 
-			    <li id = 'pagenext'>
-			    	{% if paginate.page == paginate.pages %}
-		        		<a href='#'>下一页</a>
-		        	{% else %}
-		        		<a href='/article/index?page={{paginate.next_num}}'>下一页</a>
-		    		{% endif %}
-		    	</li>
-		    </ul>
- 		</div>
-	 </div>
+		    <li id = 'pagenext'>
+		    	{% if paginate.has_next %}
+	        		<a href='/article/index?page={{paginate.next_num}}'>下一页</a>
+	        	{% else %}
+	        		<a href='/article/index?page={{ paginate.pages }}'>下一页</a>
+	    		{% endif %}
+	    	</li>
+	    </ul>
+ 	</div>
 </div>
 {% endblock %}

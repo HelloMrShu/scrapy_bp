@@ -23,7 +23,9 @@
 	{% for point in points %}
 		<div class="row row-height">
 			<div class="col-md-1"> {{ point.id}} </div>
-			<div class="col-md-2"> {{ point.name_display}} </div>
+			<div class="col-md-2" data-toggle="tooltip"title="{{point.name}}">
+				<span class="full-display"> {{ point.name_display}} </span>
+			</div>
 			<div class="col-md-6"> {{ point.addr}} </div>
 			<div class="col-md-1"> {{ point.category}} </div>
 			<div class="col-md-1"> {{ point.longitude}} </div>
