@@ -7,10 +7,11 @@ from app import create_app
 from flask_script import Manager, Command
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
-from app.models import Poi
+from app.models import db, Poi, Monitor
 from urllib import parse
 import logging
 import time
+import psutil
 
 
 config_name = os.environ.get('FLASK_CONFIG') or 'default'
@@ -19,7 +20,6 @@ config_name = os.environ.get('FLASK_CONFIG') or 'default'
 app = create_app(config_name)
 app.config['DEBUG'] = True
 taskManager = Manager(app)
-
 
 @taskManager.command
 def create_index(name='location', type="poi"):
@@ -115,13 +115,36 @@ def insert_poi(name='location', type="poi"):
             
     print('poi insert done(s)：' + str(time.time() - start_time))
 
-
 # 处理name里的特殊字符
 def resolve(poiname):
     parsestr = parse.unquote(poiname)
     pattern = r'[\u4e00-\u9fa5]+[A-Za-z]'
     match = re.compile(pattern)
     return match.findall(parsestr)
+
+# 每隔1s取一次cpu占用率并写入文件
+@taskManager.command
+def cpu_monitor():
+    while True:
+        # 获取当前时间和cpu占有率
+        t  = time.localtime()
+        cur_date = '%d-%d-%d' %(t.tm_year, t.tm_mon, t.tm_mday)
+        cur_time = '%d:%d:%d' %(t.tm_hour, t.tm_min, t.tm_sec)
+        cpu_res = psutil.cpu_percent()
+     
+        # 保存到DB
+        monitor = Monitor(date=str(cur_date), time=str(cur_time), cpu_load=str(cpu_res))
+
+        try:
+            db.session.add(monitor)
+            db.session.commit()
+
+        except:
+            db.session.rollback()
+
+        finally:
+            time.sleep(1)
+
 
 
 if __name__ == '__main__':

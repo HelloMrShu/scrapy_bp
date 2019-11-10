@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% set active_page = "tools" %}
+{% block title %}flask tools page{% endblock %}
+{% block content %}
+
+<script type="text/javascript">
+
+	function getData() {
+		$.ajax({
+	        url : "/tools/cpu_monitor",
+	        dataType : "json",
+	        type : "get",
+	        success : function(json){
+	            console.log(json.ret);
+	        }
+    	})
+	}
+	
+	setInterval(function () {
+	    for (var i = 0; i < 2; i++) {
+	        // data.shift();
+	        // data.push(getData());
+	        getData();
+	    }
+
+	    // myChart.setOption({
+	    //     series: [{
+	    //         data: data
+	    //     }]
+	    // });
+	}, 10000);
+</script>
+<div class="container">
+	<div class="row" id="gap">
+		<div class="col-xs-6 col-md-6">
+			<div id="cpu"></div>
+		</div>
+		<div class="col-xs-6 col-md-6">
+		</div>
+	</div>
+</div>
+
+{% endblock %}

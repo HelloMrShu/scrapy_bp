@@ -74,3 +74,12 @@ class Poi(db.Model):
     sub_category = db.Column(db.String(64), default='', nullable=False)
     longitude = db.Column(db.String(64), default=0, nullable=False)
     latitude = db.Column(db.String(64), default=0, nullable=False)
+
+
+# 定义cpu load model
+class Monitor(db.Model):
+    __tablename__ = 'cpu_monitor'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.String(16), default='', nullable=True)
+    time = db.Column(db.String(16), default=0, nullable=True)
+    cpu_load = db.Column(db.DECIMAL(10,2), default=0, nullable=False)

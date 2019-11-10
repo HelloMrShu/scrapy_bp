@@ -1,6 +1,7 @@
+import os,json
 from . import main
-from flask import render_template, request, url_for, redirect, abort, flash
-from app.models import Image, Article, db, Comment, Category, City, Poi
+from flask import render_template, request, url_for, redirect, abort, flash, jsonify, Response
+from app.models import Image, Article, db, Comment, Category, City, Poi, Monitor
 
 
 # 首页
@@ -156,3 +157,16 @@ def poi_city(category_name):
             category_name=category_name,
             city_name=city_name
         )
+
+
+# cpu页面
+@main.route('/tools/cpu', methods=['GET'])
+def tools_cpu():
+    return render_template('/tools/cpu.html')
+
+# cpu 占用率数据
+@main.route('/tools/cpu_monitor', methods=['GET'])
+def tools_cpu_monitor():
+    # 从DB读取曲线绘制的数据信息;
+    data = Monitor.query.order_by('id').limit(50).all()
+    return jsonify(data)
