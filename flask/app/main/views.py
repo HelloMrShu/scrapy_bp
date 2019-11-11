@@ -168,5 +168,12 @@ def tools_cpu():
 @main.route('/tools/cpu_monitor', methods=['GET'])
 def tools_cpu_monitor():
     # 从DB读取曲线绘制的数据信息;
-    data = Monitor.query.order_by('id').limit(50).all()
-    return jsonify(data)
+    result = Monitor.query.order_by(Monitor.id.desc()).limit(60)
+    time, load = [], []
+    date = ''
+    for item in result:
+        if not date:
+            date = item.date;
+        time.append(item.time);
+        load.append(item.cpu_load);
+    return jsonify({'date': date, 'time':time, 'load':load})

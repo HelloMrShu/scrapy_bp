@@ -3,41 +3,72 @@
 {% block title %}flask tools page{% endblock %}
 {% block content %}
 
-<script type="text/javascript">
-
-	function getData() {
-		$.ajax({
-	        url : "/tools/cpu_monitor",
-	        dataType : "json",
-	        type : "get",
-	        success : function(json){
-	            console.log(json.ret);
-	        }
-    	})
-	}
-	
-	setInterval(function () {
-	    for (var i = 0; i < 2; i++) {
-	        // data.shift();
-	        // data.push(getData());
-	        getData();
-	    }
-
-	    // myChart.setOption({
-	    //     series: [{
-	    //         data: data
-	    //     }]
-	    // });
-	}, 10000);
-</script>
 <div class="container">
 	<div class="row" id="gap">
 		<div class="col-xs-6 col-md-6">
-			<div id="cpu"></div>
+			<div id="cpu" style="width: 600px; height: 400px;"></div>
 		</div>
 		<div class="col-xs-6 col-md-6">
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
 
+	function getCpu() {
+		$.ajax({
+	        url : "/tools/cpu_monitor",
+	        dataType : "json",
+	        type : "get",
+	        async: false,
+	        success : function(ret){
+	        	myChart.hideLoading();    //隐藏加载动画
+		        myChart.setOption({        //加载数据图表
+		            xAxis: {
+		            	boundaryGap: false,
+		                data: ret.time
+		            },
+		            series: [{
+		                type: 'line',
+		                name: 'CPU负载',
+		                data: ret.load
+		            }]
+		        });
+	        },
+	        error: function() {
+	        	alert('获取CPU负载数据失败！');
+	        }
+    	})
+	}
+	
+	var myChart = echarts.init(document.getElementById('cpu'));
+
+    	// 显示标题，图例和空的坐标轴
+	    myChart.setOption({
+	        title: {
+	            text: 'CPU负载'
+	        },
+	        tooltip: {},
+	        legend: {
+	            data:['时间','负载']
+	        },
+	         xAxis: {
+		        data: []
+		    },
+	        yAxis: {},
+	        series: [{
+		        name: 'CPU数据',
+		        type: 'line',
+		        data: []
+		    }]
+	    });
+
+	    // 显示加载动画
+	    myChart.showLoading();
+	    getCpu();
+
+	// 定时获取后端数据
+	setInterval(function () {
+		getCpu();
+	}, 2000);
+</script>
 {% endblock %}
