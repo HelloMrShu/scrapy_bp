@@ -21,13 +21,19 @@
 	        type : "get",
 	        async: false,
 	        success : function(ret){
-	        	myChart.hideLoading();    //隐藏加载动画
-		        myChart.setOption({        //加载数据图表
+	        	myChart.hideLoading(); //隐藏加载动画
+		        myChart.setOption({    //加载数据图表
 		            xAxis: {
+		            	name: '时间（时：分：秒）',
+		            	nameLocation: 'middle',
+		            	nameGap: 25,
+		            	inverse: true,
 		            	boundaryGap: false,
 		                data: ret.time
 		            },
 		            series: [{
+		            	smooth: true,
+        				symbol: null,
 		                type: 'line',
 		                name: 'CPU负载',
 		                data: ret.load
@@ -45,13 +51,10 @@
     	// 显示标题，图例和空的坐标轴
 	    myChart.setOption({
 	        title: {
-	            text: 'CPU负载'
+	            text: 'CPU负载(%)',
 	        },
 	        tooltip: {},
-	        legend: {
-	            data:['时间','负载']
-	        },
-	         xAxis: {
+	        xAxis: {
 		        data: []
 		    },
 	        yAxis: {},
