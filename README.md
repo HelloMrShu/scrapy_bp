@@ -1,22 +1,11 @@
-## Scrapy Repository
-### 1 Description
-mainly contains the basis, algorithm, framework, crawler, scrapy and so on.
+# Scrapy_artisan
+mainly contains the base theory, scrapy framework, crawler and so on.
 
-### 2 Contents
-1 image directory：crawl the picture on website（www.xkcd.com）, and insert into MySQL
+# Introduction
+&#8195;&#8195;1 image crawler：crawl the picture on website（www.xkcd.com）, insert into MySQL and display on the website.
+&#8195;&#8195;2 poi crawler: mainly contains some crawlers(category, city and poi) in spider folder, whitch aim to crawl the poi information on the website(www.poilist.cn)
 
-2 flask directory: mainly contains flask framework and practical works
+# License
+<a href = "https://opensource.org/licenses/MIT">MIT</a>
 
-&#8195;&#8195;2.1 show the image data by frontend tech (virtualenv + python manage.py runserver + js + css + html) 
-
-&#8195;&#8195;2.2 Add item data container and pipeline to process data
-
-&#8195;&#8195;2.3 Add random user agent from request headers
-
-&#8195;&#8195;2.4 Add pymysql plugin to save data to mysql
-
-&#8195;&#8195;2.5 Use flask to study orm,db,form and other basic knowledge
-
-3 python directory: contains python basic grammar and some other
-
-4 poi directory: mainly contains some crawlers(category, city and poi) in spider folder, whitch aim to crawl the related data on the website(www.poilist.cn)
+Copyright (c) 2019-present
